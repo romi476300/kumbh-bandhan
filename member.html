@@ -6,469 +6,300 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <title>KUMBH BANDHAN - Band Verified</title>
+    <title>KUMBH BANDHAN - Band Verification</title>
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Yatra+One&display=swap"
-          rel="stylesheet">
-
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Yatra+One&display=swap"
+        rel="stylesheet"
+    >
 
     <style>
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-
-            margin: 0;
-
-            min-height: 100vh;
-
-            background: #fff5e6;
-
             font-family: "Baloo 2", sans-serif;
-
+            background: #fff5e6;
             color: #4b2a1f;
-
+            min-height: 100vh;
         }
-
 
         header {
-
             text-align: center;
-
-            padding: 28px 20px 18px;
-
+            padding: 28px 20px 20px;
         }
-
 
         .devanagari-title {
-
             font-family: "Yatra One", cursive;
-
             font-size: 42px;
-
-            color: #b53e16;
-
-            line-height: 1;
-
+            color: #9d3514;
+            line-height: 1.1;
         }
-
 
         .english-title {
-
-            margin-top: 8px;
-
             font-family: Georgia, serif;
-
             font-size: 30px;
-
             font-weight: bold;
-
-            letter-spacing: 3px;
-
-            color: #6d2918;
-
+            letter-spacing: 2px;
+            color: #6d2814;
+            margin-top: 5px;
         }
-
 
         .subtitle {
-
-            margin-top: 5px;
-
-            font-size: 17px;
-
-            color: #80604f;
-
+            font-size: 16px;
+            color: #806052;
+            margin-top: 3px;
         }
 
-
-        main {
-
-            width: min(720px, 92%);
-
-            margin: 20px auto 50px;
-
+        .container {
+            max-width: 650px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
         }
-
 
         .card {
-
             background: white;
-
-            border-radius: 26px;
-
+            border-radius: 24px;
             padding: 30px;
-
-            box-shadow: 0 8px 30px rgba(105, 54, 30, 0.14);
-
+            box-shadow:
+                0 12px 35px rgba(100, 45, 20, 0.12);
+            border: 1px solid #f0d7c5;
         }
-
 
         .verified {
-
             text-align: center;
-
-            margin-bottom: 25px;
-
+            margin-bottom: 24px;
         }
 
+        .verified-icon {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto 10px;
 
-        .check {
+            border-radius: 50%;
 
-            font-size: 48px;
+            background: #e5f5ec;
+            color: #27805b;
 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 40px;
         }
-
 
         .verified h1 {
-
-            margin: 5px 0;
-
-            color: #23805b;
-
-            font-size: 32px;
-
+            color: #27805b;
+            font-size: 28px;
         }
-
 
         .verified p {
-
-            margin: 0;
-
-            color: #80604f;
-
+            color: #806052;
+            margin-top: 3px;
         }
 
+        .member-name-box {
+            text-align: center;
+            background: #fff4e8;
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 22px;
+        }
+
+        .member-label {
+            font-size: 13px;
+            font-weight: 700;
+            color: #987667;
+            letter-spacing: 1px;
+        }
 
         .member-name {
-
-            text-align: center;
-
-            background: #fff0df;
-
-            border-radius: 18px;
-
-            padding: 18px;
-
-            margin-bottom: 20px;
-
-        }
-
-
-        .member-name .label {
-
-            font-size: 14px;
-
-            color: #80604f;
-
-        }
-
-
-        .member-name h2 {
-
-            margin: 2px 0 0;
-
-            font-size: 30px;
-
-            color: #b53e16;
-
-        }
-
-
-        .info-title {
-
-            font-size: 21px;
-
+            font-size: 27px;
             font-weight: 800;
-
-            margin-bottom: 12px;
-
-            color: #6d2918;
-
+            color: #8f3517;
+            margin-top: 3px;
         }
 
+        .section-title {
+            font-size: 21px;
+            font-weight: 800;
+            color: #6d2814;
+            margin-bottom: 12px;
+        }
 
         .info-grid {
-
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
             gap: 12px;
-
         }
-
 
         .info-box {
-
-            background: #fffaf4;
-
-            border: 1px solid #f0d8c3;
-
-            border-radius: 15px;
-
-            padding: 14px;
-
+            background: #fffaf6;
+            border: 1px solid #ead5c7;
+            border-radius: 13px;
+            padding: 13px;
         }
 
-
-        .info-box .label {
-
+        .info-label {
             font-size: 13px;
-
-            color: #80604f;
-
+            color: #8c7063;
+            margin-bottom: 2px;
         }
 
-
-        .info-box .value {
-
-            font-size: 18px;
-
+        .info-value {
+            font-size: 17px;
             font-weight: 700;
-
-            margin-top: 2px;
-
+            color: #563326;
             word-break: break-word;
-
         }
 
+        .zone-box {
+            margin-top: 18px;
+            background: #f1f8f8;
+            border: 1px solid #cce2e3;
+            border-radius: 16px;
+            padding: 18px;
+        }
+
+        .zone-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #236b73;
+            margin-bottom: 4px;
+        }
+
+        .zone-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #36585b;
+        }
 
         .meeting {
-
-            margin-top: 20px;
-
-            padding: 18px;
-
-            background: #eef7f4;
-
-            border-radius: 18px;
-
-            border: 1px solid #cce5dc;
-
+            margin-top: 10px;
+            color: #587073;
         }
 
-
-        .meeting-title {
-
-            font-size: 21px;
-
-            font-weight: 800;
-
-            color: #236b73;
-
-            margin-bottom: 5px;
-
-        }
-
-
-        .zone {
-
-            font-weight: 800;
-
-            font-size: 20px;
-
-            color: #236b73;
-
-        }
-
-
-        .meeting-text {
-
-            margin-top: 6px;
-
-            color: #55716b;
-
-        }
-
-
-        .help-section {
-
-            margin-top: 25px;
-
+        .help-box {
+            margin-top: 24px;
             padding: 20px;
-
-            background: #fff4f1;
-
-            border: 1px solid #f1c7ba;
-
-            border-radius: 20px;
-
+            background: #fff0ed;
+            border: 1px solid #f0c7bb;
+            border-radius: 18px;
             text-align: center;
-
         }
 
-
-        .help-section h2 {
-
-            margin: 0;
-
-            color: #b53e16;
-
+        .help-box h2 {
+            color: #b3341c;
+            font-size: 22px;
         }
 
-
-        .help-section p {
-
-            color: #80604f;
-
+        .help-box p {
+            color: #7c5c50;
+            margin: 5px 0 15px;
         }
-
 
         .help-button {
-
             width: 100%;
-
             border: none;
-
-            border-radius: 16px;
-
-            padding: 17px;
-
-            font-family: "Baloo 2", sans-serif;
-
-            font-size: 20px;
-
-            font-weight: 800;
-
-            color: white;
+            border-radius: 13px;
+            padding: 15px;
 
             background: linear-gradient(
                 135deg,
-                #c62828,
-                #e65100
+                #c6371c,
+                #ed6b2f
             );
+
+            color: white;
+            font-family: inherit;
+            font-size: 19px;
+            font-weight: 800;
 
             cursor: pointer;
 
-            box-shadow: 0 6px 18px rgba(198, 40, 40, 0.25);
-
+            box-shadow:
+                0 8px 18px rgba(198, 55, 28, 0.25);
         }
 
+        .help-button:hover {
+            transform: translateY(-1px);
+        }
 
         .help-options {
-
             display: none;
-
-            margin-top: 18px;
-
-            text-align: left;
-
+            margin-top: 14px;
+            gap: 10px;
+            flex-direction: column;
         }
 
-
-        .help-options.show {
-
+        .help-option {
             display: block;
-
-        }
-
-
-        .contact-button {
-
-            display: block;
-
-            width: 100%;
-
-            padding: 14px;
-
-            margin-top: 10px;
-
-            border-radius: 14px;
-
             text-decoration: none;
 
-            font-weight: 800;
-
-            text-align: center;
-
             background: white;
+            border: 1px solid #e1c7bc;
+            border-radius: 11px;
 
-            color: #236b73;
+            padding: 12px;
 
-            border: 1px solid #c9ded9;
-
-        }
-
-
-        .meeting-action {
-
-            margin-top: 12px;
-
-            padding: 15px;
-
-            border-radius: 14px;
-
-            background: #fff0df;
-
-            color: #7d351d;
-
+            color: #683729;
             font-weight: 700;
 
+            cursor: pointer;
         }
 
+        .help-option:hover {
+            background: #fff8f3;
+        }
 
-        .note {
-
-            margin-top: 18px;
-
+        .footer-note {
             text-align: center;
-
+            margin-top: 20px;
+            color: #92796d;
             font-size: 13px;
-
-            color: #8d6b5b;
-
         }
 
+        .home-button {
+            display: block;
+            width: fit-content;
+            margin: 20px auto 0;
 
-        footer {
-
-            text-align: center;
-
-            padding: 20px;
-
-            color: #8d6b5b;
-
-            font-size: 14px;
-
+            text-decoration: none;
+            color: #236b73;
+            font-weight: 800;
         }
-
 
         @media (max-width: 600px) {
 
             .devanagari-title {
-
-                font-size: 34px;
-
+                font-size: 35px;
             }
 
             .english-title {
-
                 font-size: 24px;
-
             }
 
             .card {
-
-                padding: 20px;
-
+                padding: 22px;
             }
 
             .info-grid {
-
                 grid-template-columns: 1fr;
+            }
 
+            .member-name {
+                font-size: 23px;
             }
 
         }
@@ -498,16 +329,18 @@
 </header>
 
 
+<div class="container">
 
-<main>
 
     <div class="card">
 
 
+        <!-- VERIFIED -->
+
         <div class="verified">
 
-            <div class="check">
-                ✅
+            <div class="verified-icon">
+                ✓
             </div>
 
             <h1>
@@ -521,22 +354,27 @@
         </div>
 
 
+        <!-- MEMBER -->
 
-        <div class="member-name">
+        <div class="member-name-box">
 
-            <div class="label">
+            <div class="member-label">
                 FAMILY MEMBER
             </div>
 
-            <h2 id="memberName">
-                Loading...
-            </h2>
+            <div
+                class="member-name"
+                id="memberName"
+            >
+                Family Member
+            </div>
 
         </div>
 
 
+        <!-- MEMBER INFORMATION -->
 
-        <div class="info-title">
+        <div class="section-title">
             👤 Member Information
         </div>
 
@@ -546,58 +384,63 @@
 
             <div class="info-box">
 
-                <div class="label">
+                <div class="info-label">
                     Family ID
                 </div>
 
-                <div class="value"
-                     id="familyId">
+                <div
+                    class="info-value"
+                    id="familyId"
+                >
                     —
                 </div>
 
             </div>
 
 
-
             <div class="info-box">
 
-                <div class="label">
+                <div class="info-label">
                     Band ID
                 </div>
 
-                <div class="value"
-                     id="bandId">
+                <div
+                    class="info-value"
+                    id="bandId"
+                >
                     —
                 </div>
 
             </div>
 
 
-
             <div class="info-box">
 
-                <div class="label">
+                <div class="info-label">
                     Age
                 </div>
 
-                <div class="value"
-                     id="age">
+                <div
+                    class="info-value"
+                    id="memberAge"
+                >
                     —
                 </div>
 
             </div>
-
 
 
             <div class="info-box">
 
-                <div class="label">
+                <div class="info-label">
                     Relationship
                 </div>
 
-                <div class="value"
-                     id="relationship">
-                    —
+                <div
+                    class="info-value"
+                    id="relationship"
+                >
+                    Family Member
                 </div>
 
             </div>
@@ -606,152 +449,142 @@
         </div>
 
 
+        <!-- ZONE -->
 
-        <div class="meeting">
+        <div class="zone-box">
 
-            <div class="meeting-title">
+            <div class="zone-title">
                 📍 Assigned Zone
             </div>
 
-            <div class="zone"
-                 id="zone">
-                —
+            <div
+                class="zone-name"
+                id="zone"
+            >
+                Panchavati – Ramkund
             </div>
 
-            <div class="meeting-text">
+            <div class="meeting">
 
-                Suggested Meeting Point:
-                <strong id="meetingPoint">
-                    —
+                <strong>
+                    Suggested Meeting Point:
                 </strong>
+
+                <span id="meetingPoint">
+                    Designated Zone Meeting Point
+                </span>
 
             </div>
 
         </div>
 
 
+        <!-- HELP -->
 
-        <div class="help-section">
+        <div class="help-box">
 
             <h2>
                 🚨 Separated or Need Help?
             </h2>
 
             <p>
-                Activate assistance if the person is separated from their family.
+                Activate assistance if the person is separated
+                from their family.
             </p>
 
 
             <button
                 class="help-button"
-                onclick="activateEmergency()">
-
+                onclick="showHelpOptions()"
+            >
                 🚨 GET HELP NOW
-
             </button>
-
 
 
             <div
                 class="help-options"
-                id="helpOptions">
-
+                id="helpOptions"
+            >
 
                 <a
-                    class="contact-button"
-                    id="parentCall"
-                    href="#">
-
+                    class="help-option"
+                    href="tel:9999999999"
+                >
                     📞 Call Parent
-
                 </a>
 
 
                 <a
-                    class="contact-button"
-                    id="familyCall"
-                    href="#">
-
+                    class="help-option"
+                    href="tel:9999999999"
+                >
                     👨‍👩‍👧 Call Family Member
-
                 </a>
 
 
                 <a
-                    class="contact-button"
-                    href="tel:9999999999">
-
-                    👮 Call Zone Coordinator
-
+                    class="help-option"
+                    href="tel:9999999999"
+                >
+                    📍 Call Zone Coordinator
                 </a>
 
 
                 <a
-                    class="contact-button"
-                    href="tel:9999999999">
-
+                    class="help-option"
+                    href="tel:9999999999"
+                >
                     🆘 Call KUMBH BANDHAN Help Centre
-
                 </a>
 
 
-                <div class="meeting-action">
-
-                    📍 <strong>Go to Meeting Point</strong>
-
-                    <br>
-
-                    Proceed to the designated KUMBH BANDHAN meeting point
-                    in your assigned zone.
-
-                </div>
-
+                <button
+                    class="help-option"
+                    onclick="goToMeetingPoint()"
+                >
+                    📍 Go to Meeting Point
+                </button>
 
             </div>
 
+        </div>
+
+
+        <div class="footer-note">
+
+            KUMBH BANDHAN • Nashik Kumbh 2027
 
         </div>
 
 
-
-        <div class="note">
-
-            For demonstration purposes, emergency contact numbers
-            are currently sample numbers.
-
-        </div>
+        <a
+            href="index.html"
+            class="home-button"
+        >
+            ← Back to Home
+        </a>
 
 
     </div>
 
-</main>
-
-
-<footer>
-
-    KUMBH BANDHAN • Nashik Kumbh 2027
-
-</footer>
-
+</div>
 
 
 <script>
 
 
     /*
-     * Read information from QR URL
+     * READ INFORMATION FROM QR URL
      *
-     * Example:
-     *
-     * member.html?
-     * family=KB-27-45587&
-     * band=KB-27-45587-01&
-     * member=Rahul
+     * This is important because the person scanning
+     * the QR code will NOT have the registering family's
+     * localStorage data.
      */
 
-
     const params =
-        new URLSearchParams(window.location.search);
+        new URLSearchParams(
+            window.location.search
+        );
 
 
     const familyId =
@@ -761,240 +594,111 @@
     const bandId =
         params.get("band") || "—";
 
-const memberName =
-    params.get("member") || "Family Member";
 
-const age =
-    params.get("age") || "—";
-
-const relationship =
-    params.get("relationship") || "Family Member";
-
-const zone =
-    params.get("zone") || "Panchavati – Ramkund";
-
-const meetingPoint =
-    params.get("meeting") || "Designated Zone Meeting Point";
+    const memberName =
+        params.get("member") || "Family Member";
 
 
-
-    /*
-     * Get registration information
-     * stored in the browser.
-     */
+    const age =
+        params.get("age") || "—";
 
 
-    const storedFamilyId =
-        localStorage.getItem("familyId");
-
-
-    const storedMembersText =
-        localStorage.getItem("familyMembers");
-
-
-    let storedMembers = [];
-
-
-    try {
-
-        storedMembers =
-            storedMembersText
-                ? JSON.parse(storedMembersText)
-                : [];
-
-    }
-
-    catch (error) {
-
-        storedMembers = [];
-
-    }
-
-
-
-    /*
-     * Find the correct member.
-     *
-     * This works when the page is opened
-     * on the same device where registration
-     * was completed.
-     */
-
-
-    let matchedMember = null;
-
-
-    if (storedMembers.length > 0) {
-
-        matchedMember =
-            storedMembers.find(
-                member =>
-                    String(member.name).trim().toLowerCase()
-                    ===
-                    String(memberName).trim().toLowerCase()
-            );
-
-    }
-
-
-
-    /*
-     * Display Family ID
-     */
-
-    document.getElementById("familyId").textContent =
-        familyId !== "—"
-            ? familyId
-            : storedFamilyId || "—";
-
-
-
-    /*
-     * Display Band ID
-     */
-
-    document.getElementById("bandId").textContent =
-        bandId;
-
-
-
-    /*
-     * Display member name
-     */
-
-    document.getElementById("memberName").textContent =
-        matchedMember?.name || memberName;
-
-
-
-    /*
-     * Display age
-     */
-
-    document.getElementById("age").textContent =
-        matchedMember?.age || "—";
-
-
-
-    /*
-     * Display relationship
-     */
-
-    document.getElementById("relationship").textContent =
-        matchedMember?.relationship || "Family Member";
-
-
-
-    /*
-     * Zone
-     *
-     * For the prototype, the registered zone
-     * is used when available.
-     */
-
-    const storedZone =
-        localStorage.getItem("zone");
+    const relationship =
+        params.get("relationship") || "Family Member";
 
 
     const zone =
-        storedZone ||
-        "Panchavati – Ramkund";
+        params.get("zone") || "Panchavati – Ramkund";
 
 
-    document.getElementById("zone").textContent =
-        zone;
-
-
-
-    /*
-     * Suggested meeting point
-     */
-
-    const meetingPoints = {
-
-        "Panchavati – Ramkund":
-            "Ramkund Family Assistance Point",
-
-        "Tapovan – Sadhugram":
-            "Tapovan Family Assistance Point",
-
-        "Nashik Central – Trimbak Road Gateway":
-            "Trimbak Road Family Assistance Point",
-
-        "West Nashik – Anandwalli/Chandshi":
-            "West Nashik Family Assistance Point",
-
-        "Trimbakeshwar Core":
-            "Trimbakeshwar Family Assistance Point",
-
-        "Trimbakeshwar Approach – Pegalwadi":
-            "Pegalwadi Family Assistance Point",
-
-        "Girnare – Pahine Approach":
-            "Girnare Family Assistance Point",
-
-        "Transport & Outer Support Ring":
-            "Transport Support Assistance Point"
-
-    };
-
-
-    document.getElementById("meetingPoint").textContent =
-        meetingPoints[zone]
+    const meetingPoint =
+        params.get("meeting")
         || "Designated Zone Meeting Point";
 
 
-
     /*
-     * Emergency assistance
+     * DISPLAY INFORMATION
      */
 
-    function activateEmergency() {
-
-        const helpOptions =
-            document.getElementById("helpOptions");
-
-
-        helpOptions.classList.add("show");
+    document.getElementById(
+        "familyId"
+    ).textContent = familyId;
 
 
-        alert(
-            "KUMBH BANDHAN Emergency Assistance\n\n" +
+    document.getElementById(
+        "bandId"
+    ).textContent = bandId;
 
-            "Assistance activated for:\n" +
 
-            (matchedMember?.name || memberName) +
+    document.getElementById(
+        "memberName"
+    ).textContent = memberName;
 
-            "\n\n" +
 
-            "Family ID: " +
-            (familyId !== "—"
-                ? familyId
-                : storedFamilyId || "—") +
+    document.getElementById(
+        "memberAge"
+    ).textContent = age;
 
-            "\n\n" +
 
-            "Assigned Zone:\n" +
-            zone
-        );
+    document.getElementById(
+        "relationship"
+    ).textContent = relationship;
+
+
+    document.getElementById(
+        "zone"
+    ).textContent = zone;
+
+
+    document.getElementById(
+        "meetingPoint"
+    ).textContent = meetingPoint;
+
+
+    /*
+     * SHOW EMERGENCY OPTIONS
+     */
+
+    function showHelpOptions() {
+
+        const options =
+            document.getElementById(
+                "helpOptions"
+            );
+
+        if (
+            options.style.display === "flex"
+        ) {
+
+            options.style.display = "none";
+
+        } else {
+
+            options.style.display = "flex";
+
+        }
 
     }
 
 
     /*
-     * Sample contact numbers.
+     * MEETING POINT
      *
-     * These will later be replaced by
-     * registered family/contact numbers.
+     * For the prototype, this displays the
+     * assigned meeting point.
      */
 
+    function goToMeetingPoint() {
 
-    document.getElementById("parentCall").href =
-        "tel:9999999999";
+        alert(
+            "Meeting Point\n\n" +
+            meetingPoint +
+            "\n\n" +
+            "Please approach the KUMBH BANDHAN " +
+            "volunteers at this meeting point."
+        );
 
-
-    document.getElementById("familyCall").href =
-        "tel:9999999999";
+    }
 
 
 </script>
@@ -1004,3 +708,20 @@ const meetingPoint =
 
 </html>
 ```
+
+### Now do this
+
+1. Save `member.html`.
+2. Upload/commit the updated `member.html` to GitHub.
+3. **Register a new test family** using your new `register.html`.
+4. Generate the new family bands.
+5. Scan the **new QR code**.
+
+The scanned page should now show:
+
+**Age → the age you entered**
+**Relationship → the relationship you selected**
+**Assigned Zone → your selected zone**
+**Meeting Point → the zone's meeting point**
+
+One important point: **don't test with your old QR yet**. Your old QR may contain the old/blank data. Generate a fresh band after registering again.

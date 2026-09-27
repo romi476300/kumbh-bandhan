@@ -1,4 +1,4 @@
-```html
+```html id="4p8x2n"
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,7 +72,8 @@
             background: white;
             border-radius: 24px;
             padding: 30px;
-            box-shadow: 0 12px 35px rgba(100,45,20,0.12);
+            box-shadow:
+                0 12px 35px rgba(100,45,20,0.12);
             border: 1px solid #f0d7c5;
         }
 
@@ -123,6 +124,7 @@
             font-weight: 800;
             color: #8f3517;
             margin-top: 3px;
+            word-break: break-word;
         }
 
         .section-title {
@@ -207,17 +209,23 @@
             border: none;
             border-radius: 13px;
             padding: 15px;
-            background: linear-gradient(135deg,#c6371c,#ed6b2f);
+            background:
+                linear-gradient(
+                    135deg,
+                    #c6371c,
+                    #ed6b2f
+                );
             color: white;
             font-family: inherit;
             font-size: 19px;
             font-weight: 800;
             cursor: pointer;
-            box-shadow: 0 8px 18px rgba(198,55,28,0.25);
+            box-shadow:
+                0 8px 18px rgba(198,55,28,0.25);
         }
 
-        .help-button:hover {
-            transform: translateY(-1px);
+        .help-button:disabled {
+            cursor: default;
         }
 
         .help-options {
@@ -245,8 +253,6 @@
         .help-option:hover {
             background: #fff8f3;
         }
-
-        /* EMERGENCY STATUS */
 
         .emergency-status {
             display: none;
@@ -511,8 +517,6 @@
             </button>
 
 
-            <!-- EMERGENCY STATUS -->
-
             <div
                 class="emergency-status"
                 id="emergencyStatus"
@@ -536,16 +540,18 @@
             </div>
 
 
-            <!-- OPTIONS -->
+            <!-- CALL OPTIONS -->
 
             <div
                 class="help-options"
                 id="helpOptions"
             >
 
+
                 <a
                     class="help-option"
-                    href="tel:9999999999"
+                    id="callParent"
+                    href="#"
                 >
                     📞 Call Parent
                 </a>
@@ -553,9 +559,10 @@
 
                 <a
                     class="help-option"
-                    href="tel:9999999999"
+                    id="callFamily"
+                    href="#"
                 >
-                    👨‍👩‍👧 Call Family Member
+                    👨‍👩‍👧 Call Family Contact
                 </a>
 
 
@@ -581,6 +588,7 @@
                 >
                     📍 Go to Meeting Point
                 </button>
+
 
             </div>
 
@@ -627,11 +635,13 @@
 
 
     const memberName =
-        params.get("member") || "Family Member";
+        params.get("member")
+        || "Family Member";
 
 
     const age =
-        params.get("age") || "—";
+        params.get("age")
+        || "—";
 
 
     const relationship =
@@ -650,7 +660,21 @@
 
 
     /*
-     * DISPLAY DATA
+     * FAMILY CONTACT DATA
+     */
+
+    const parentNumber =
+        params.get("parent")
+        || "";
+
+
+    const contactName =
+        params.get("contact")
+        || "Family Contact";
+
+
+    /*
+     * DISPLAY INFORMATION
      */
 
     document.getElementById(
@@ -689,7 +713,66 @@
 
 
     /*
-     * ACTIVATE EMERGENCY
+     * CALL PARENT
+     */
+
+    const callParent =
+        document.getElementById(
+            "callParent"
+        );
+
+
+    if (parentNumber) {
+
+        callParent.href =
+            "tel:" + parentNumber;
+
+        callParent.textContent =
+            "📞 Call Parent (" +
+            parentNumber +
+            ")";
+
+    } else {
+
+        callParent.href = "#";
+
+        callParent.textContent =
+            "📞 Parent Number Not Available";
+
+    }
+
+
+    /*
+     * CALL FAMILY CONTACT
+     */
+
+    const callFamily =
+        document.getElementById(
+            "callFamily"
+        );
+
+
+    if (parentNumber) {
+
+        callFamily.href =
+            "tel:" + parentNumber;
+
+        callFamily.textContent =
+            "👨‍👩‍👧 Call " +
+            contactName;
+
+    } else {
+
+        callFamily.href = "#";
+
+        callFamily.textContent =
+            "👨‍👩‍👧 Family Contact Not Available";
+
+    }
+
+
+    /*
+     * EMERGENCY ACTIVATION
      */
 
     function activateEmergency() {
@@ -699,30 +782,39 @@
                 "emergencyStatus"
             );
 
+
         const options =
             document.getElementById(
                 "helpOptions"
             );
+
 
         const button =
             document.getElementById(
                 "helpButton"
             );
 
+
         const alertId =
             "AL-" +
-            Date.now().toString().slice(-6);
+            Date.now()
+                .toString()
+                .slice(-6);
 
 
         document.getElementById(
             "alertId"
         ).textContent =
-            "Emergency Alert ID: " + alertId;
+            "Emergency Alert ID: " +
+            alertId;
 
 
-        status.style.display = "block";
+        status.style.display =
+            "block";
 
-        options.style.display = "flex";
+
+        options.style.display =
+            "flex";
 
 
         button.textContent =
@@ -737,10 +829,7 @@
 
 
         /*
-         * DEMO EVENT RECORD
-         *
-         * This stores the emergency locally
-         * for prototype demonstration.
+         * SAVE DEMO ALERT
          */
 
         const emergencyData = {
@@ -761,6 +850,10 @@
 
             meetingPoint: meetingPoint,
 
+            parentNumber: parentNumber,
+
+            contactName: contactName,
+
             status: "ACTIVE",
 
             time: new Date().toLocaleString()
@@ -770,25 +863,41 @@
 
         localStorage.setItem(
             "lastEmergencyAlert",
-            JSON.stringify(emergencyData)
+            JSON.stringify(
+                emergencyData
+            )
         );
 
 
         /*
-         * Demo confirmation
+         * DEMO CONFIRMATION
          */
 
-        setTimeout(function() {
+        setTimeout(
+            function() {
 
-            alert(
-                "🚨 EMERGENCY ALERT ACTIVATED\n\n" +
-                "Family ID: " + familyId + "\n" +
-                "Member: " + memberName + "\n" +
-                "Zone: " + zone + "\n\n" +
-                "Assistance workflow activated."
-            );
+                alert(
 
-        }, 100);
+                    "🚨 EMERGENCY ALERT ACTIVATED\n\n" +
+
+                    "Family ID: " +
+                    familyId +
+
+                    "\nMember: " +
+                    memberName +
+
+                    "\nZone: " +
+                    zone +
+
+                    "\n\n" +
+
+                    "Assistance workflow activated."
+
+                );
+
+            },
+            100
+        );
 
     }
 
@@ -800,11 +909,19 @@
     function goToMeetingPoint() {
 
         alert(
+
             "📍 MEETING POINT\n\n" +
+
             meetingPoint +
+
             "\n\n" +
-            "Please approach the KUMBH BANDHAN " +
-            "volunteers at this location."
+
+            "Please approach the " +
+
+            "KUMBH BANDHAN volunteers " +
+
+            "at this location."
+
         );
 
     }
@@ -818,57 +935,10 @@
 </html>
 ```
 
-### 2. Keep the corrected `register.html`
+Save it, then **commit/upload `member.html` to GitHub**.
 
-The `register.html` code I gave you immediately before this already has the important fix:
+### Test it
 
-```js
-members.push({
-    name: name,
-    age: age,
-    relationship: relationship
-});
-```
+Register a **new family** with a test mobile number, generate a **new QR**, scan it, press **GET HELP NOW**, and then tap **📞 Call Parent**.
 
-and:
-
-```js
-localStorage.setItem(
-    "familyMembers",
-    JSON.stringify(members)
-);
-```
-
-**Don't change that file again.**
-
-### 3. One important thing before testing
-
-Because you've changed both files, do a **fresh registration**.
-
-Don't use the old QR.
-
-Use this sequence:
-
-**Register Family → enter member age & relationship → Register Family & Continue → Generate Family Bands → scan NEW QR**
-
-The QR should now show something like:
-
-> **Family Member**
-> Gautami Manoj Khairnar
->
-> Family ID: `KB-27-xxxxx`
-> Band ID: `KB-27-xxxxx-01`
-> Age: `21`
-> Relationship: `Self`
->
-> 📍 Assigned Zone
-> Panchavati – Ramkund
->
-> Suggested Meeting Point:
-> Ramkund Family Assistance Point
->
-> 🚨 **GET HELP NOW**
-
-And after pressing **GET HELP NOW**, you'll get an **Emergency Alert ID** and the assistance options.
-
-**For the hackathon, this gives you a complete demonstrable front-end flow.** The next major feature I'd add after this is the **Power BI/control-room dashboard**, because that will make the project feel much more like a complete real-world system rather than just a QR website.
+On a phone, the `tel:` link should open the phone's calling interface with the registered number.

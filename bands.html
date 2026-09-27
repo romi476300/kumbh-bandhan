@@ -1,202 +1,223 @@
-```html
+```html id="2j4w9k"
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>KUMBH BANDHAN - Family Bands</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Yatra+One&display=swap"
-          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Yatra+One&display=swap"
+        rel="stylesheet"
+    >
 
     <style>
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
-            min-height: 100vh;
-            background: #fff5e6;
             font-family: "Baloo 2", sans-serif;
+            background: #fff5e6;
             color: #4b2a1f;
+            min-height: 100vh;
         }
 
         header {
             text-align: center;
-            padding: 28px 20px 18px;
+            padding: 28px 20px 20px;
         }
 
         .devanagari-title {
             font-family: "Yatra One", cursive;
             font-size: 42px;
-            color: #b53e16;
-            line-height: 1;
+            color: #9d3514;
+            line-height: 1.1;
         }
 
         .english-title {
-            margin-top: 8px;
             font-family: Georgia, serif;
             font-size: 30px;
             font-weight: bold;
-            letter-spacing: 3px;
-            color: #6d2918;
+            letter-spacing: 2px;
+            color: #6d2814;
+            margin-top: 5px;
         }
 
         .subtitle {
-            margin-top: 5px;
-            font-size: 17px;
-            color: #80604f;
+            font-size: 16px;
+            color: #806052;
+            margin-top: 3px;
         }
 
-        .back-button {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 9px 18px;
-            border-radius: 20px;
-            background: white;
-            color: #8d3519;
-            text-decoration: none;
-            font-weight: 700;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        .container {
+            max-width: 950px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
         }
 
-        main {
-            width: min(1050px, 92%);
-            margin: 20px auto 50px;
-        }
-
-        .family-card {
+        .card {
             background: white;
             border-radius: 24px;
-            padding: 28px;
-            box-shadow: 0 8px 30px rgba(105, 54, 30, 0.12);
+            padding: 30px;
+            box-shadow: 0 12px 35px rgba(100,45,20,0.12);
+            border: 1px solid #f0d7c5;
         }
 
-        .family-heading {
+        .page-title {
             text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .family-heading h1 {
-            margin: 0;
-            color: #b53e16;
             font-size: 30px;
+            color: #a33f18;
+            margin-bottom: 5px;
         }
 
         .family-id {
-            display: inline-block;
-            margin-top: 8px;
-            padding: 7px 16px;
-            background: #fff0df;
-            border-radius: 20px;
+            text-align: center;
+            font-size: 19px;
             font-weight: 800;
-            color: #8d3519;
+            color: #236b73;
+            margin-bottom: 25px;
+        }
+
+        .description {
+            text-align: center;
+            color: #806052;
+            margin-bottom: 25px;
         }
 
         .bands-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 22px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
         .band-card {
-            border-radius: 20px;
-            padding: 22px;
-            background: #fffaf4;
-            border: 1px solid #f0d8c3;
+            background: #fffaf6;
+            border: 1px solid #ead5c7;
+            border-radius: 18px;
+            padding: 20px;
             text-align: center;
         }
 
-        .band-card h2 {
-            margin: 0 0 5px;
-            color: #6d2918;
-            font-size: 23px;
+        .band-number {
+            font-size: 14px;
+            color: #8c7063;
+            font-weight: 700;
+        }
+
+        .member-name {
+            font-size: 22px;
+            font-weight: 800;
+            color: #8f3517;
+            margin-top: 4px;
+            word-break: break-word;
         }
 
         .band-id {
+            margin-top: 6px;
+            color: #236b73;
             font-weight: 800;
-            color: #b53e16;
-            margin-bottom: 12px;
+            font-size: 15px;
         }
 
-        .member-info {
-            text-align: left;
-            background: white;
-            padding: 12px 15px;
-            border-radius: 14px;
-            margin-bottom: 16px;
-        }
-
-        .member-info div {
-            margin: 4px 0;
+        .member-details {
+            margin-top: 8px;
+            color: #6e5a50;
+            font-size: 14px;
         }
 
         .qr-box {
+            margin: 18px auto;
+            width: 210px;
+            min-height: 210px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: white;
-            padding: 14px;
-            border-radius: 16px;
-            display: inline-block;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            border: 8px solid white;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.12);
         }
 
         .qr-box img {
-            width: 200px;
-            height: 200px;
             display: block;
+            width: 194px;
+            height: 194px;
         }
 
         .scan-text {
-            margin-top: 12px;
-            font-size: 14px;
-            color: #80604f;
+            font-size: 13px;
+            color: #806052;
             line-height: 1.4;
         }
 
-        .important {
-            margin-top: 25px;
-            padding: 16px 20px;
-            background: #fff0df;
-            border-radius: 16px;
-            text-align: center;
-            color: #7d351d;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #8d6b5b;
+        .zone {
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 10px;
+            background: #eef7f7;
+            color: #236b73;
+            font-weight: 700;
             font-size: 14px;
         }
 
-        @media (max-width: 600px) {
+        .back-home {
+            display: block;
+            width: fit-content;
+            margin: 25px auto 0;
+            text-decoration: none;
+            color: #236b73;
+            font-weight: 800;
+        }
+
+        .error {
+            text-align: center;
+            background: #fff0ed;
+            border: 1px solid #efc7bb;
+            padding: 20px;
+            border-radius: 15px;
+            color: #a43a23;
+            display: none;
+        }
+
+        @media (max-width: 800px) {
+
+            .bands-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            .bands-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 20px;
+            }
 
             .devanagari-title {
-                font-size: 34px;
+                font-size: 35px;
             }
 
             .english-title {
                 font-size: 24px;
             }
 
-            .family-card {
-                padding: 18px;
-            }
-
-            .qr-box img {
-                width: 180px;
-                height: 180px;
-            }
-
         }
 
     </style>
+
 </head>
 
 
@@ -217,73 +238,78 @@
         Smart Family Safety & Reunification System
     </div>
 
-    <a href="index.html" class="back-button">
-        ← Back to Home
-    </a>
-
 </header>
 
 
+<div class="container">
 
-<main>
+    <div class="card">
 
-    <div class="family-card">
+        <h1 class="page-title">
+            Family Safety Bands
+        </h1>
 
-        <div class="family-heading">
+        <div
+            class="family-id"
+            id="familyId"
+        >
+            Family ID: —
+        </div>
 
-            <h1>
-                Family Safety Bands
-            </h1>
+        <p class="description">
+            Each family member receives a unique Band ID and QR code.
+            Scan the QR code to access emergency assistance.
+        </p>
 
-            <div class="family-id"
-                 id="familyIdDisplay">
-                Family ID
-            </div>
 
+        <div
+            class="error"
+            id="errorMessage"
+        >
+            No family registration data found.
+            Please register your family first.
         </div>
 
 
-        <div class="bands-grid"
-             id="bandsContainer">
+        <div
+            class="bands-grid"
+            id="bandsGrid"
+        >
         </div>
 
 
-        <div class="important">
-
-            📱 <strong>Important:</strong>
-
-            Each band has a unique QR code.
-            Scan the QR code to verify the band
-            and access assistance for a separated family member.
-
-        </div>
+        <a
+            href="index.html"
+            class="back-home"
+        >
+            ← Back to Home
+        </a>
 
     </div>
 
-</main>
-
-
-
-<footer>
-
-    KUMBH BANDHAN • Nashik Kumbh 2027
-
-</footer>
-
+</div>
 
 
 <script>
 
 
     /*
-     * Get registration data
+     * FAMILY DATA
      */
 
     const familyId =
         localStorage.getItem("familyId");
 
-    const membersText =
-        localStorage.getItem("familyMembers");
+
+    const contactName =
+        localStorage.getItem("contactName")
+        || "Family Contact";
+
+
+    const mobile =
+        localStorage.getItem("mobile")
+        || "";
+
 
     const zone =
         localStorage.getItem("zone")
@@ -295,10 +321,9 @@
 
     try {
 
-        members =
-            membersText
-                ? JSON.parse(membersText)
-                : [];
+        members = JSON.parse(
+            localStorage.getItem("familyMembers")
+        ) || [];
 
     } catch (error) {
 
@@ -307,17 +332,8 @@
     }
 
 
-    document.getElementById("familyIdDisplay").textContent =
-        familyId || "No Family ID found";
-
-
-    const container =
-        document.getElementById("bandsContainer");
-
-
-
     /*
-     * Meeting point information
+     * ZONE → MEETING POINT
      */
 
     const meetingPoints = {
@@ -331,8 +347,8 @@
         "Nashik Central – Trimbak Road Gateway":
             "Trimbak Road Family Assistance Point",
 
-        "West Nashik – Anandwalli/Chandshi":
-            "West Nashik Family Assistance Point",
+        "West Nashik – Anandwalli / Chandshi":
+            "Anandwalli Family Assistance Point",
 
         "Trimbakeshwar Core":
             "Trimbakeshwar Family Assistance Point",
@@ -354,212 +370,194 @@
         || "Designated Zone Meeting Point";
 
 
-
     /*
-     * If registration doesn't exist
+     * SHOW FAMILY ID
      */
 
-    if (!familyId || members.length === 0) {
+    if (familyId) {
 
-        container.innerHTML = `
-
-            <div style="
-                grid-column:1/-1;
-                text-align:center;
-                padding:30px;
-            ">
-
-                <h2>
-                    No family registration found.
-                </h2>
-
-                <p>
-                    Please register your family first.
-                </p>
-
-                <a
-                    href="register.html"
-                    style="
-                        display:inline-block;
-                        margin-top:10px;
-                        padding:12px 20px;
-                        background:#c94f16;
-                        color:white;
-                        text-decoration:none;
-                        border-radius:25px;
-                        font-weight:bold;
-                    "
-                >
-                    Register Family
-                </a>
-
-            </div>
-
-        `;
+        document.getElementById(
+            "familyId"
+        ).textContent =
+            "Family ID: " + familyId;
 
     }
 
 
-    else {
+    /*
+     * CHECK DATA
+     */
+
+    if (
+        !familyId ||
+        members.length === 0
+    ) {
+
+        document.getElementById(
+            "errorMessage"
+        ).style.display = "block";
+
+    } else {
+
+
+        const grid =
+            document.getElementById(
+                "bandsGrid"
+            );
 
 
         /*
-         * Create one safety band
-         * for every family member.
+         * CREATE ONE BAND FOR EACH MEMBER
          */
 
-        members.forEach((member, index) => {
+        members.forEach(
+            function(member, index) {
 
 
-            const bandId =
-                familyId +
-                "-" +
-                String(index + 1).padStart(2, "0");
+                const bandId =
+                    familyId +
+                    "-" +
+                    String(index + 1).padStart(2, "0");
 
 
+                /*
+                 * QR → ONLINE MEMBER PAGE
+                 *
+                 * The registered mobile number
+                 * is included for the Call Parent feature.
+                 */
 
-            /*
-             * THIS IS THE IMPORTANT PART.
-             *
-             * All required information is placed
-             * inside the QR URL.
-             *
-             * The phone does NOT need the computer's
-             * localStorage.
-             */
+                const memberURL =
+                    "https://romi476300.github.io/kumbh-bandhan/member.html" +
 
-            const memberURL =
-                "https://romi476300.github.io/kumbh-bandhan/member.html" +
+                    "?family=" +
+                    encodeURIComponent(familyId) +
 
-                "?family=" +
-                encodeURIComponent(familyId) +
+                    "&band=" +
+                    encodeURIComponent(bandId) +
 
-                "&band=" +
-                encodeURIComponent(bandId) +
+                    "&member=" +
+                    encodeURIComponent(member.name) +
 
-                "&member=" +
-                encodeURIComponent(member.name) +
+                    "&age=" +
+                    encodeURIComponent(member.age || "") +
 
-                "&age=" +
-                encodeURIComponent(member.age || "") +
+                    "&relationship=" +
+                    encodeURIComponent(
+                        member.relationship || ""
+                    ) +
 
-                "&relationship=" +
-                encodeURIComponent(member.relationship || "") +
+                    "&zone=" +
+                    encodeURIComponent(zone) +
 
-                "&zone=" +
-                encodeURIComponent(zone) +
+                    "&meeting=" +
+                    encodeURIComponent(meetingPoint) +
 
-                "&meeting=" +
-                encodeURIComponent(meetingPoint);
+                    "&parent=" +
+                    encodeURIComponent(mobile) +
 
-
-
-            /*
-             * Generate QR code
-             */
-
-            const qrURL =
-                "https://api.qrserver.com/v1/create-qr-code/" +
-
-                "?size=200x200" +
-
-                "&data=" +
-                encodeURIComponent(memberURL);
+                    "&contact=" +
+                    encodeURIComponent(contactName);
 
 
+                /*
+                 * QR CODE
+                 */
 
-            /*
-             * Create card
-             */
+                const qrURL =
+                    "https://api.qrserver.com/v1/create-qr-code/" +
 
-            const card =
-                document.createElement("div");
+                    "?size=200x200" +
 
-
-            card.className =
-                "band-card";
-
-
-            card.innerHTML = `
-
-                <h2>
-                    ${escapeHTML(member.name)}
-                </h2>
-
-                <div class="band-id">
-                    Band ID: ${escapeHTML(bandId)}
-                </div>
+                    "&data=" +
+                    encodeURIComponent(memberURL);
 
 
-                <div class="member-info">
+                /*
+                 * CREATE BAND CARD
+                 */
 
-                    <div>
-                        <strong>Age:</strong>
-                        ${escapeHTML(member.age || "—")}
+                const card =
+                    document.createElement("div");
+
+
+                card.className =
+                    "band-card";
+
+
+                card.innerHTML = `
+
+                    <div class="band-number">
+                        KUMBH BANDHAN SAFETY BAND
                     </div>
 
-                    <div>
-                        <strong>Relationship:</strong>
-                        ${escapeHTML(member.relationship || "Family Member")}
+                    <div class="member-name">
+                        ${escapeHTML(member.name)}
                     </div>
 
-                    <div>
-                        <strong>Zone:</strong>
-                        ${escapeHTML(zone)}
+                    <div class="band-id">
+                        ${escapeHTML(bandId)}
                     </div>
 
-                </div>
+                    <div class="member-details">
+                        Age:
+                        ${escapeHTML(
+                            String(member.age || "—")
+                        )}
+
+                        <br>
+
+                        Relationship:
+                        ${escapeHTML(
+                            member.relationship ||
+                            "Family Member"
+                        )}
+                    </div>
+
+                    <div class="qr-box">
+
+                        <img
+                            src="${qrURL}"
+                            alt="QR code for ${escapeHTML(member.name)}"
+                        >
+
+                    </div>
+
+                    <div class="scan-text">
+                        Scan to verify this family member
+                        and access emergency assistance.
+                    </div>
+
+                    <div class="zone">
+                        📍 ${escapeHTML(zone)}
+                    </div>
+
+                `;
 
 
-                <div class="qr-box">
+                grid.appendChild(card);
 
-                    <img
-                        src="${qrURL}"
-                        alt="KUMBH BANDHAN QR Code"
-                    >
-
-                </div>
-
-
-                <div class="scan-text">
-
-                    📱 Scan this QR code
-                    to verify the band and
-                    access family assistance.
-
-                </div>
-
-            `;
-
-
-            container.appendChild(card);
-
-        });
+            }
+        );
 
     }
 
 
-
     /*
-     * Protect the page from special characters
-     * in names and other fields.
+     * BASIC HTML ESCAPING
      */
 
     function escapeHTML(value) {
 
-        return String(value)
-
+        return value
             .replace(/&/g, "&amp;")
-
             .replace(/</g, "&lt;")
-
             .replace(/>/g, "&gt;")
-
             .replace(/"/g, "&quot;")
-
             .replace(/'/g, "&#039;");
 
     }
+
 
 </script>
 
@@ -568,3 +566,7 @@
 
 </html>
 ```
+
+**Save this as `bands.html` and commit/upload it to GitHub.**
+
+Don't change `member.html` yet. After this is saved, tell me **`d`**, and I'll give you the second file separately.

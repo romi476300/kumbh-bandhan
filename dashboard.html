@@ -1,0 +1,1295 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KUMBH BANDHAN - Control Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Yatra+One&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Baloo 2", sans-serif;
+            background: #f7f3ee;
+            color: #40271e;
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+
+        header {
+            background: white;
+            border-bottom: 1px solid #eadbd0;
+            padding: 20px 35px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .brand-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #c94f16, #f28b28);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 27px;
+        }
+
+        .brand-text h1 {
+            font-family: Georgia, serif;
+            font-size: 24px;
+            letter-spacing: 1px;
+            color: #6d2814;
+        }
+
+        .brand-text p {
+            font-size: 14px;
+            color: #8b7165;
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #e9f7ef;
+            color: #23744d;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .status-dot {
+            width: 9px;
+            height: 9px;
+            background: #2e9b62;
+            border-radius: 50%;
+        }
+
+        /* MAIN */
+
+        main {
+            max-width: 1250px;
+            margin: auto;
+            padding: 30px 25px 50px;
+        }
+
+        .welcome {
+            margin-bottom: 25px;
+        }
+
+        .welcome h2 {
+            font-size: 31px;
+            color: #542d20;
+        }
+
+        .welcome p {
+            color: #8a7065;
+            font-size: 16px;
+        }
+
+        /* STAT CARDS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+
+        .stat-card {
+            background: white;
+            border: 1px solid #eadbd0;
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 6px 20px rgba(80,45,25,0.06);
+        }
+
+        .stat-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stat-icon {
+            font-size: 25px;
+        }
+
+        .stat-label {
+            color: #8c766c;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: #542d20;
+        }
+
+        /* ALERT SECTION */
+
+        .section-card {
+            background: white;
+            border: 1px solid #eadbd0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(80,45,25,0.06);
+        }
+
+        .section-header {
+            padding: 20px 23px;
+            border-bottom: 1px solid #eadbd0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .section-header h3 {
+            font-size: 22px;
+            color: #542d20;
+        }
+
+        .section-header p {
+            color: #8c766c;
+            font-size: 14px;
+        }
+
+        .refresh-button {
+            border: none;
+            background: #236b73;
+            color: white;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 9px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* ALERT */
+
+        .alert-container {
+            padding: 22px;
+        }
+
+        .no-alert {
+            text-align: center;
+            padding: 45px 20px;
+            color: #8c766c;
+        }
+
+        .no-alert-icon {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .alert-card {
+            border: 1px solid #efc8bd;
+            border-left: 6px solid #d74425;
+            border-radius: 15px;
+            padding: 20px;
+            background: #fff9f7;
+        }
+
+        .alert-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 17px;
+        }
+
+        .alert-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .alert-badge {
+            background: #d74425;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 7px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .alert-title h4 {
+            font-size: 21px;
+            color: #632719;
+        }
+
+        .alert-time {
+            font-size: 13px;
+            color: #92786c;
+        }
+
+        .alert-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .alert-info {
+            background: white;
+            border: 1px solid #eadbd0;
+            border-radius: 11px;
+            padding: 12px;
+        }
+
+        .alert-info-label {
+            font-size: 12px;
+            color: #987d70;
+        }
+
+        .alert-info-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: #4f3025;
+            word-break: break-word;
+        }
+
+        .alert-actions {
+            margin-top: 18px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .action-button {
+            border: none;
+            border-radius: 10px;
+            padding: 11px 16px;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .call-button {
+            background: #e6f4f4;
+            color: #236b73;
+        }
+
+        .meeting-button {
+            background: #fff0d9;
+            color: #a05b08;
+        }
+
+        .resolve-button {
+            background: #e7f5ec;
+            color: #28774e;
+        }
+
+        /* ZONES */
+
+        .zone-section {
+            margin-top: 28px;
+        }
+
+        .zone-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            padding: 22px;
+        }
+
+        .zone-card {
+            border: 1px solid #eadbd0;
+            border-radius: 14px;
+            padding: 16px;
+            background: #fffdfb;
+        }
+
+        .zone-card h4 {
+            color: #5d3528;
+            font-size: 16px;
+            line-height: 1.25;
+        }
+
+        .zone-card p {
+            color: #8d756b;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .zone-status {
+            margin-top: 10px;
+            display: inline-block;
+            background: #e8f6ed;
+            color: #28774e;
+            padding: 4px 9px;
+            border-radius: 7px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #92786c;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .zone-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .alert-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 16px 18px;
+            }
+
+            .status {
+                display: none;
+            }
+
+            main {
+                padding: 23px 15px 40px;
+            }
+
+            .welcome h2 {
+                font-size: 26px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .stat-card {
+                padding: 15px;
+            }
+
+            .stat-number {
+                font-size: 26px;
+            }
+
+            .section-header {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .alert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .zone-grid {
+                grid-template-columns: 1fr;
+                padding: 15px;
+            }
+
+            .alert-top {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🚨
+        </div>
+
+        <div class="brand-text">
+
+            <h1>
+                KUMBH BANDHAN
+            </h1>
+
+            <p>
+                Family Safety Control Centre
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="status">
+
+        <span class="status-dot"></span>
+
+        SYSTEM ACTIVE
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+    <div class="welcome">
+
+        <h2>
+            Control Dashboard
+        </h2>
+
+        <p>
+            Monitor family safety alerts and coordinate reunification.
+        </p>
+
+    </div>
+
+
+    <!-- STATISTICS -->
+
+    <div class="stats">
+
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+                <div class="stat-icon">👨‍👩‍👧</div>
+            </div>
+
+            <div class="stat-label">
+                Registered Families
+            </div>
+
+            <div
+                class="stat-number"
+                id="familyCount"
+            >
+                0
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+                <div class="stat-icon">🎫</div>
+            </div>
+
+            <div class="stat-label">
+                Bands Issued
+            </div>
+
+            <div
+                class="stat-number"
+                id="bandCount"
+            >
+                0
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+                <div class="stat-icon">🚨</div>
+            </div>
+
+            <div class="stat-label">
+                Active Alerts
+            </div>
+
+            <div
+                class="stat-number"
+                id="alertCount"
+            >
+                0
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-top">
+                <div class="stat-icon">📍</div>
+            </div>
+
+            <div class="stat-label">
+                Active Zones
+            </div>
+
+            <div
+                class="stat-number"
+                id="zoneCount"
+            >
+                8
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- EMERGENCY ALERTS -->
+
+    <div class="section-card">
+
+        <div class="section-header">
+
+            <div>
+
+                <h3>
+                    🚨 Emergency Alerts
+                </h3>
+
+                <p>
+                    Live assistance requests from scanned bands
+                </p>
+
+            </div>
+
+
+            <button
+                class="refresh-button"
+                onclick="loadDashboard()"
+            >
+                ↻ Refresh
+            </button>
+
+        </div>
+
+
+        <div
+            class="alert-container"
+            id="alertContainer"
+        >
+
+        </div>
+
+    </div>
+
+
+    <!-- ZONES -->
+
+    <div class="section-card zone-section">
+
+        <div class="section-header">
+
+            <div>
+
+                <h3>
+                    📍 Zone Monitoring
+                </h3>
+
+                <p>
+                    KUMBH BANDHAN assistance zones
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="zone-grid">
+
+
+            <div class="zone-card">
+
+                <h4>
+                    Panchavati – Ramkund
+                </h4>
+
+                <p>
+                    Ramkund Family Assistance Point
+                </p>
+
+                <span class="zone-status">
+                    ACTIVE
+                </span>
+
+            </div>
+
+
+            <div class="zone-card">
+
+                <h4>
+                    Tapovan – Sadhugram
+                </h4>
+
+                <p>
+                    Tapovan Family Assistance Point
+                </p>
+
+                <span class="zone-status">
+                    ACTIVE
+                </span>
+
+            </div>
+
+
+            <div class="zone-card">
+
+                <h4>
+                    Nashik Central – Trimbak Road
+                </h4>
+
+                <p>
+                    Trimbak Road Family Assistance Point
+                </p>
+
+                <span class="zone-status">
+                    ACTIVE
+                </span>
+
+            </div>
+
+
+            <div class="zone-card">
+
+                <h4>
+                    West Nashik
+                </h4>
+
+                <p>
+                    Anandwalli Family Assistance Point
+                </p>
+
+                <span class="zone-status">
+                    ACTIVE
+                </span>
+
+            </div>
+
+
+            <div class="zone-card">
+
+                <h4>
+                    Trimbakeshwar Core
+                </h4>
+
+                <p>
+                    Trimbakeshwar Family Assistance Point
+                </p>
+
+                <span class="zone-status">
+                    ACTIVE
+                </span>
+
+            </div>
+
+
+            <div class="zone-card">
+
+                <h4>
+                    Trimbakeshwar Approach
+                </h4>
+
+                <p>
+                    Pegalwadi Family Assistance Point
+                </p>
+
+                <span class="zone-status">
+                    ACTIVE
+                </span>
+
+            </div>
+
+
+            <div class="zone-card">
+
+                <h4>
+                    Girnare – Pahine Approach
+                </h4>
+
+                <p>
+                    Girnare Family Assistance Point
+                </p>
+
+                <span class="zone-status">
+                    ACTIVE
+                </span>
+
+            </div>
+
+
+            <div class="zone-card">
+
+                <h4>
+                    Transport & Outer Support Ring
+                </h4>
+
+                <p>
+                    Transport Support Assistance Point
+                </p>
+
+                <span class="zone-status">
+                    ACTIVE
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+<footer>
+
+    KUMBH BANDHAN • Nashik Kumbh 2027 • Family Safety Control Centre
+
+</footer>
+
+
+<script>
+
+
+    /*
+     * LOAD DASHBOARD DATA
+     */
+
+    function loadDashboard() {
+
+
+        /*
+         * FAMILY DATA
+         *
+         * Registration currently stores one family
+         * in localStorage.
+         */
+
+        const familyId =
+            localStorage.getItem(
+                "familyId"
+            );
+
+
+        const membersJSON =
+            localStorage.getItem(
+                "familyMembers"
+            );
+
+
+        let members = [];
+
+
+        if (membersJSON) {
+
+            try {
+
+                members =
+                    JSON.parse(
+                        membersJSON
+                    );
+
+            } catch (error) {
+
+                members = [];
+
+            }
+
+        }
+
+
+        document.getElementById(
+            "familyCount"
+        ).textContent =
+            familyId ? "1" : "0";
+
+
+        document.getElementById(
+            "bandCount"
+        ).textContent =
+            members.length;
+
+
+        /*
+         * EMERGENCY ALERT
+         */
+
+        const alertJSON =
+            localStorage.getItem(
+                "lastEmergencyAlert"
+            );
+
+
+        const alertContainer =
+            document.getElementById(
+                "alertContainer"
+            );
+
+
+        if (!alertJSON) {
+
+            document.getElementById(
+                "alertCount"
+            ).textContent = "0";
+
+
+            alertContainer.innerHTML = `
+
+                <div class="no-alert">
+
+                    <div class="no-alert-icon">
+                        ✅
+                    </div>
+
+                    <h3>
+                        No Active Emergency Alerts
+                    </h3>
+
+                    <p>
+                        All monitored family assistance requests
+                        are currently clear.
+                    </p>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        let alert;
+
+
+        try {
+
+            alert =
+                JSON.parse(
+                    alertJSON
+                );
+
+        } catch (error) {
+
+            alertContainer.innerHTML = `
+                <div class="no-alert">
+                    Unable to read alert data.
+                </div>
+            `;
+
+            return;
+
+        }
+
+
+        document.getElementById(
+            "alertCount"
+        ).textContent = "1";
+
+
+        /*
+         * CREATE ALERT CARD
+         */
+
+        alertContainer.innerHTML = `
+
+            <div class="alert-card">
+
+                <div class="alert-top">
+
+                    <div class="alert-title">
+
+                        <span class="alert-badge">
+                            ACTIVE
+                        </span>
+
+                        <h4>
+                            ${escapeHTML(
+                                alert.memberName
+                            )}
+                        </h4>
+
+                    </div>
+
+                    <div class="alert-time">
+                        ${escapeHTML(
+                            alert.time || "Time unavailable"
+                        )}
+                    </div>
+
+                </div>
+
+
+                <div class="alert-grid">
+
+
+                    <div class="alert-info">
+
+                        <div class="alert-info-label">
+                            Family ID
+                        </div>
+
+                        <div class="alert-info-value">
+                            ${escapeHTML(
+                                alert.familyId
+                            )}
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert-info">
+
+                        <div class="alert-info-label">
+                            Band ID
+                        </div>
+
+                        <div class="alert-info-value">
+                            ${escapeHTML(
+                                alert.bandId
+                            )}
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert-info">
+
+                        <div class="alert-info-label">
+                            Age
+                        </div>
+
+                        <div class="alert-info-value">
+                            ${escapeHTML(
+                                alert.age
+                            )}
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert-info">
+
+                        <div class="alert-info-label">
+                            Relationship
+                        </div>
+
+                        <div class="alert-info-value">
+                            ${escapeHTML(
+                                alert.relationship
+                            )}
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert-info">
+
+                        <div class="alert-info-label">
+                            Assigned Zone
+                        </div>
+
+                        <div class="alert-info-value">
+                            ${escapeHTML(
+                                alert.zone
+                            )}
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert-info">
+
+                        <div class="alert-info-label">
+                            Meeting Point
+                        </div>
+
+                        <div class="alert-info-value">
+                            ${escapeHTML(
+                                alert.meetingPoint
+                            )}
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert-info">
+
+                        <div class="alert-info-label">
+                            Family Contact
+                        </div>
+
+                        <div class="alert-info-value">
+                            ${escapeHTML(
+                                alert.contactName ||
+                                "Not available"
+                            )}
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert-info">
+
+                        <div class="alert-info-label">
+                            Parent No.
+                        </div>
+
+                        <div class="alert-info-value">
+                            ${escapeHTML(
+                                alert.parentNumber ||
+                                "Not available"
+                            )}
+                        </div>
+
+                    </div>
+
+
+                    <div class="alert-info">
+
+                        <div class="alert-info-label">
+                            Alert ID
+                        </div>
+
+                        <div class="alert-info-value">
+                            ${escapeHTML(
+                                alert.alertId
+                            )}
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="alert-actions">
+
+
+                    ${
+                        alert.parentNumber
+                        ?
+
+                        `<a
+                            class="action-button call-button"
+                            href="tel:${encodeURIComponent(
+                                alert.parentNumber
+                            )}"
+                        >
+                            📞 Call Parent
+                        </a>`
+
+                        :
+
+                        ""
+                    }
+
+
+                    <button
+                        class="action-button meeting-button"
+                        onclick="showMeeting('${escapeJS(
+                            alert.meetingPoint
+                        )}')"
+                    >
+                        📍 Meeting Point
+                    </button>
+
+
+                    <button
+                        class="action-button resolve-button"
+                        onclick="resolveAlert()"
+                    >
+                        ✓ Mark Reunited
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+        `;
+
+    }
+
+
+    /*
+     * MARK ALERT AS RESOLVED
+     */
+
+    function resolveAlert() {
+
+        const confirmResolve =
+            confirm(
+                "Mark this emergency case as reunited?"
+            );
+
+
+        if (!confirmResolve) {
+
+            return;
+
+        }
+
+
+        localStorage.removeItem(
+            "lastEmergencyAlert"
+        );
+
+
+        loadDashboard();
+
+
+        alert(
+            "✓ Case marked as reunited."
+        );
+
+    }
+
+
+    /*
+     * MEETING POINT
+     */
+
+    function showMeeting(
+        meetingPoint
+    ) {
+
+        alert(
+            "📍 MEETING POINT\n\n" +
+            meetingPoint +
+            "\n\n" +
+            "Guide the family member to this assistance point."
+        );
+
+    }
+
+
+    /*
+     * BASIC HTML SECURITY
+     */
+
+    function escapeHTML(
+        value
+    ) {
+
+        if (
+            value === undefined ||
+            value === null
+        ) {
+
+            return "";
+
+        }
+
+
+        return String(value)
+            .replace(
+                /&/g,
+                "&amp;"
+            )
+            .replace(
+                /</g,
+                "&lt;"
+            )
+            .replace(
+                />/g,
+                "&gt;"
+            )
+            .replace(
+                /"/g,
+                "&quot;"
+            )
+            .replace(
+                /'/g,
+                "&#039;"
+            );
+
+    }
+
+
+    function escapeJS(
+        value
+    ) {
+
+        if (
+            value === undefined ||
+            value === null
+        ) {
+
+            return "";
+
+        }
+
+
+        return String(value)
+            .replace(
+                /\\/g,
+                "\\\\"
+            )
+            .replace(
+                /'/g,
+                "\\'"
+            );
+
+    }
+
+
+    /*
+     * LOAD WHEN PAGE OPENS
+     */
+
+    loadDashboard();
+
+
+</script>
+
+
+</body>
+
+</html>
+```

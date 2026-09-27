@@ -23,86 +23,84 @@
         body {
             margin: 0;
             background: #fff5e6;
-            font-family: "Baloo 2", sans-serif;
             color: #4b2a1f;
+            font-family: "Baloo 2", sans-serif;
         }
 
         header {
             text-align: center;
-            padding: 28px 20px 10px;
+            padding: 25px 20px 10px;
         }
 
         .devanagari-title {
             font-family: "Yatra One", cursive;
             font-size: 42px;
-            color: #a63d12;
+            color: #9e3f16;
             line-height: 1;
         }
 
         .english-title {
             font-family: Georgia, serif;
-            font-size: 28px;
+            font-size: 30px;
             font-weight: bold;
             letter-spacing: 3px;
-            color: #6d2d19;
+            color: #71301d;
             margin-top: 8px;
         }
 
         .subtitle {
             font-size: 17px;
-            color: #765044;
+            color: #806052;
             margin-top: 5px;
         }
 
         .container {
-            width: min(900px, 92%);
-            margin: 20px auto 50px;
+            width: 92%;
+            max-width: 900px;
+            margin: 15px auto 40px;
         }
 
-        .back-button {
-            display: inline-block;
-            text-decoration: none;
-            color: #7c351d;
-            font-size: 16px;
-            font-weight: 600;
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 15px;
         }
 
-        .form-card {
-            background: white;
-            border-radius: 24px;
-            padding: 32px;
-            box-shadow: 0 10px 30px rgba(95, 49, 25, 0.12);
-        }
-
-        h1 {
-            margin: 0 0 8px;
+        .page-title {
             font-size: 30px;
-            color: #8e3716;
+            font-weight: 800;
+            color: #71301d;
         }
 
-        .intro {
+        .back-button {
+            text-decoration: none;
+            background: white;
+            color: #71301d;
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(100, 50, 20, 0.12);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 22px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(100, 50, 20, 0.10);
+        }
+
+        .card h2 {
             margin-top: 0;
-            color: #756056;
-            font-size: 16px;
-        }
-
-        .section {
-            margin-top: 28px;
-            padding-top: 22px;
-            border-top: 1px solid #ead8ca;
-        }
-
-        .section h2 {
-            margin: 0 0 18px;
-            font-size: 22px;
-            color: #74311c;
+            color: #9e3f16;
+            font-size: 23px;
         }
 
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 18px;
+            gap: 16px;
         }
 
         .full {
@@ -112,175 +110,178 @@
         label {
             display: block;
             font-weight: 700;
-            margin-bottom: 7px;
-            font-size: 15px;
+            margin-bottom: 6px;
+            color: #613a2d;
         }
 
         input,
         select,
         textarea {
             width: 100%;
-            padding: 13px 14px;
-            border: 1.5px solid #d9bca9;
+            padding: 12px 14px;
+            border: 2px solid #ead5c5;
             border-radius: 12px;
             background: #fffaf5;
+            font-family: "Baloo 2", sans-serif;
+            font-size: 16px;
             color: #4b2a1f;
-            font-family: inherit;
-            font-size: 15px;
             outline: none;
         }
 
         input:focus,
         select:focus,
         textarea:focus {
-            border-color: #d46a2e;
-            box-shadow: 0 0 0 3px rgba(212, 106, 46, 0.12);
+            border-color: #d66a28;
         }
 
         textarea {
-            min-height: 90px;
+            min-height: 85px;
             resize: vertical;
         }
 
         .member-card {
             background: #fff8f0;
-            border: 1px solid #ead5c5;
+            border: 2px solid #f0dfd0;
             border-radius: 16px;
-            padding: 18px;
-            margin-bottom: 14px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .member-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
         }
 
         .member-title {
-            font-size: 17px;
+            font-size: 19px;
             font-weight: 800;
-            color: #8b3818;
-            margin-bottom: 14px;
+            color: #71301d;
         }
 
-        .remove-member {
-            margin-top: 10px;
+        .remove-button {
             border: none;
-            background: transparent;
-            color: #b33a27;
+            background: #f5d7cb;
+            color: #9e3f16;
+            padding: 7px 12px;
+            border-radius: 9px;
             cursor: pointer;
             font-family: inherit;
             font-weight: 700;
         }
 
-        .add-member {
-            border: 2px dashed #d58a57;
-            background: #fffaf5;
-            color: #9b431c;
-            padding: 12px 18px;
+        .add-button {
+            border: 2px dashed #d66a28;
+            background: transparent;
+            color: #b44d17;
+            width: 100%;
+            padding: 12px;
             border-radius: 12px;
             cursor: pointer;
             font-family: inherit;
-            font-size: 15px;
-            font-weight: 700;
+            font-size: 17px;
+            font-weight: 800;
         }
 
         .radio-group {
             display: grid;
-            gap: 12px;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
         }
 
         .radio-option {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+            border: 2px solid #ead5c5;
+            border-radius: 15px;
             padding: 15px;
-            border: 1.5px solid #e0c9b8;
-            border-radius: 14px;
-            background: #fffaf5;
             cursor: pointer;
+            background: #fffaf5;
+        }
+
+        .radio-option:hover {
+            border-color: #d66a28;
         }
 
         .radio-option input {
             width: auto;
-            accent-color: #c9571c;
+            margin-right: 8px;
         }
 
         .radio-option strong {
-            display: block;
-            font-size: 16px;
-        }
-
-        .radio-option small {
-            color: #776258;
+            color: #71301d;
         }
 
         .submit-button {
             width: 100%;
-            margin-top: 30px;
             border: none;
-            border-radius: 15px;
-            padding: 16px;
+            border-radius: 16px;
+            padding: 17px;
             background: linear-gradient(135deg, #c94f16, #f28b28);
             color: white;
             font-family: inherit;
-            font-size: 19px;
+            font-size: 20px;
             font-weight: 800;
             cursor: pointer;
-            box-shadow: 0 7px 18px rgba(201, 79, 22, 0.25);
+            box-shadow: 0 8px 18px rgba(201, 79, 22, 0.25);
         }
 
         .submit-button:hover {
             transform: translateY(-1px);
         }
 
-        .success-screen {
+        .success {
             display: none;
             text-align: center;
         }
 
         .success-icon {
-            font-size: 55px;
-        }
-
-        .success-screen h1 {
-            color: #2f7a45;
-        }
-
-        .family-id-box {
-            display: inline-block;
-            margin: 20px 0;
-            padding: 18px 30px;
-            border-radius: 16px;
-            background: #fff3dc;
-            border: 2px dashed #d47a2c;
-        }
-
-        .family-id-label {
-            font-size: 14px;
-            color: #765044;
+            font-size: 60px;
         }
 
         .family-id {
+            display: inline-block;
+            background: #fff0dc;
+            border: 2px dashed #d66a28;
+            color: #9e3f16;
             font-size: 30px;
             font-weight: 800;
-            color: #a53e14;
+            padding: 12px 25px;
+            border-radius: 15px;
+            margin: 15px 0;
             letter-spacing: 2px;
         }
 
-        .next-button {
+        .continue-button {
             display: inline-block;
             text-decoration: none;
+            background: linear-gradient(135deg, #236b73, #3c9297);
+            color: white;
             padding: 14px 25px;
             border-radius: 13px;
-            background: #236b73;
-            color: white;
+            font-size: 18px;
             font-weight: 800;
-            font-size: 17px;
+            margin-top: 10px;
         }
 
         .note {
-            margin-top: 18px;
-            color: #6f5b51;
+            background: #fff3dd;
+            border-left: 5px solid #e17b28;
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            color: #684536;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #8c6b5d;
             font-size: 14px;
         }
 
-        @media (max-width: 650px) {
-            .form-grid {
+        @media (max-width: 700px) {
+            .form-grid,
+            .radio-group {
                 grid-template-columns: 1fr;
             }
 
@@ -288,8 +289,10 @@
                 grid-column: auto;
             }
 
-            .form-card {
-                padding: 22px;
+            .top-bar {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
             }
 
             .devanagari-title {
@@ -297,7 +300,11 @@
             }
 
             .english-title {
-                font-size: 22px;
+                font-size: 24px;
+            }
+
+            .card {
+                padding: 18px;
             }
         }
     </style>
@@ -315,353 +322,351 @@
 
 <div class="container">
 
-    <a href="index.html" class="back-button">
-        ← Back to Home
-    </a>
+    <div class="top-bar">
+        <div class="page-title">Register Your Family</div>
 
-    <div class="form-card">
+        <a href="index.html" class="back-button">
+            ← Back to Home
+        </a>
+    </div>
 
-        <!-- ================= REGISTRATION FORM ================= -->
+    <!-- REGISTRATION FORM -->
 
-        <div id="registrationForm">
+    <div id="registrationForm">
 
-            <h1>Register Your Family</h1>
+        <!-- FAMILY CONTACT -->
 
-            <p class="intro">
-                Create your family's safety profile for faster assistance
-                and reunification during Nashik Kumbh 2027.
-            </p>
+        <div class="card">
 
+            <h2>👨‍👩‍👧 Family Contact</h2>
 
-            <!-- FAMILY CONTACT -->
+            <div class="form-grid">
 
-            <div class="section">
-
-                <h2>👨‍👩‍👧 Family Contact</h2>
-
-                <div class="form-grid">
-
-                    <div>
-
-                        <label for="contactName">
-                            Contact Person Name *
-                        </label>
-
-                        <input
-                            type="text"
-                            id="contactName"
-                            placeholder="Enter full name"
-                        >
-
-                    </div>
-
-
-                    <div>
-
-                        <label for="mobile">
-                            Mobile Number *
-                        </label>
-
-                        <input
-                            type="tel"
-                            id="mobile"
-                            maxlength="10"
-                            placeholder="10-digit mobile number"
-                        >
-
-                    </div>
-
-
-                    <div class="full">
-
-                        <label for="email">
-                            Email Address
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            placeholder="example@email.com"
-                        >
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- FAMILY MEMBERS -->
-
-            <div class="section">
-
-                <h2>👨‍👩‍👧‍👦 Family Members</h2>
-
-                <div id="membersContainer"></div>
-
-                <button
-                    type="button"
-                    class="add-member"
-                    onclick="addMember()"
-                >
-                    + Add Family Member
-                </button>
-
-            </div>
-
-
-            <!-- STAY DETAILS -->
-
-            <div class="section">
-
-                <h2>📍 Stay Details</h2>
-
-                <div class="form-grid">
-
-                    <div>
-
-                        <label for="stayName">
-                            Stay / Hotel / Camp Name *
-                        </label>
-
-                        <input
-                            type="text"
-                            id="stayName"
-                            placeholder="Where are you staying?"
-                        >
-
-                    </div>
-
-
-                    <div>
-
-                        <label for="zone">
-                            Assigned Zone *
-                        </label>
-
-                        <select id="zone">
-
-                            <option value="">
-                                Select your zone
-                            </option>
-
-                            <option value="Panchavati – Ramkund">
-                                Panchavati – Ramkund
-                            </option>
-
-                            <option value="Tapovan – Sadhugram">
-                                Tapovan – Sadhugram
-                            </option>
-
-                            <option value="Nashik Central – Trimbak Road Gateway">
-                                Nashik Central – Trimbak Road Gateway
-                            </option>
-
-                            <option value="West Nashik – Anandwalli / Chandshi">
-                                West Nashik – Anandwalli / Chandshi
-                            </option>
-
-                            <option value="Trimbakeshwar Core">
-                                Trimbakeshwar Core
-                            </option>
-
-                            <option value="Trimbakeshwar Approach – Pegalwadi">
-                                Trimbakeshwar Approach – Pegalwadi
-                            </option>
-
-                            <option value="Girnare – Pahine Approach">
-                                Girnare – Pahine Approach
-                            </option>
-
-                            <option value="Transport & Outer Support Ring">
-                                Transport & Outer Support Ring
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="full">
-
-                        <label for="address">
-                            Stay Address
-                        </label>
-
-                        <textarea
-                            id="address"
-                            placeholder="Enter your stay address"
-                        ></textarea>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- BAND COLLECTION -->
-
-            <div class="section">
-
-                <h2>📦 Band Collection</h2>
-
-                <div class="radio-group">
-
-                    <label class="radio-option">
-
-                        <input
-                            type="radio"
-                            name="collectionOption"
-                            value="Deliver bands to my stay"
-                            checked
-                        >
-
-                        <div>
-
-                            <strong>
-                                Deliver bands to my stay
-                            </strong>
-
-                            <small>
-                                KUMBH BANDHAN team delivers the bands
-                                to your registered stay.
-                            </small>
-
-                        </div>
-
+                <div>
+                    <label for="contactName">
+                        Primary Family Contact Name *
                     </label>
 
+                    <input
+                        type="text"
+                        id="contactName"
+                        placeholder="Enter full name"
+                    >
+                </div>
 
-                    <label class="radio-option">
-
-                        <input
-                            type="radio"
-                            name="collectionOption"
-                            value="Collect from KUMBH BANDHAN centre"
-                        >
-
-                        <div>
-
-                            <strong>
-                                Collect from KUMBH BANDHAN centre
-                            </strong>
-
-                            <small>
-                                Collect your family's bands after
-                                arriving at Nashik.
-                            </small>
-
-                        </div>
-
+                <div>
+                    <label for="mobile">
+                        Mobile Number *
                     </label>
 
+                    <input
+                        type="tel"
+                        id="mobile"
+                        maxlength="10"
+                        placeholder="10-digit mobile number"
+                    >
+                </div>
+
+                <div class="full">
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="example@email.com"
+                    >
                 </div>
 
             </div>
 
+        </div>
 
-            <!-- SUBMIT -->
+
+        <!-- FAMILY MEMBERS -->
+
+        <div class="card">
+
+            <h2>👨‍👩‍👧‍👦 Family Members</h2>
+
+            <div id="membersContainer"></div>
 
             <button
                 type="button"
-                class="submit-button"
-                onclick="registerFamily()"
+                class="add-button"
+                onclick="addMember()"
             >
-                Register Family & Continue →
+                + Add Family Member
             </button>
 
+            <div class="note">
+                Each registered family member will receive a unique
+                KUMBH BANDHAN safety band with a Band ID and QR code.
+            </div>
+
         </div>
 
 
-        <!-- ================= SUCCESS SCREEN ================= -->
+        <!-- STAY DETAILS -->
 
-        <div
-            id="successScreen"
-            class="success-screen"
-        >
+        <div class="card">
 
-            <div class="success-icon">
-                ✅
-            </div>
+            <h2>📍 Stay Details in Nashik</h2>
 
-            <h1>
-                Family Registered Successfully!
-            </h1>
+            <div class="form-grid">
 
-            <p>
-                Your KUMBH BANDHAN family safety profile has been created.
-            </p>
+                <div>
+                    <label for="stayName">
+                        Stay / Accommodation Name *
+                    </label>
 
-
-            <div class="family-id-box">
-
-                <div class="family-id-label">
-                    YOUR FAMILY ID
+                    <input
+                        type="text"
+                        id="stayName"
+                        placeholder="Hotel, lodge, camp, etc."
+                    >
                 </div>
 
-                <div
-                    class="family-id"
-                    id="generatedFamilyId"
-                ></div>
+                <div>
+                    <label for="zone">
+                        Assigned / Nearby Zone *
+                    </label>
 
-            </div>
+                    <select id="zone">
 
+                        <option value="">
+                            Select zone
+                        </option>
 
-            <p>
-                Keep this Family ID safe. It will be used to identify
-                your family during assistance and reunification.
-            </p>
+                        <option value="Panchavati – Ramkund">
+                            Panchavati – Ramkund
+                        </option>
 
+                        <option value="Tapovan – Sadhugram">
+                            Tapovan – Sadhugram
+                        </option>
 
-            <a
-                href="bands.html"
-                class="next-button"
-            >
-                Generate Family Bands →
-            </a>
+                        <option value="Nashik Central – Trimbak Road Gateway">
+                            Nashik Central – Trimbak Road Gateway
+                        </option>
 
+                        <option value="West Nashik – Anandwalli / Chandshi">
+                            West Nashik – Anandwalli / Chandshi
+                        </option>
 
-            <div class="note">
-                Your registration information has been recorded
-                for the KUMBH BANDHAN system.
+                        <option value="Trimbakeshwar Core">
+                            Trimbakeshwar Core
+                        </option>
+
+                        <option value="Trimbakeshwar Approach – Pegalwadi">
+                            Trimbakeshwar Approach – Pegalwadi
+                        </option>
+
+                        <option value="Girnare – Pahine Approach">
+                            Girnare – Pahine Approach
+                        </option>
+
+                        <option value="Transport & Outer Support Ring">
+                            Transport & Outer Support Ring
+                        </option>
+
+                    </select>
+                </div>
+
+                <div class="full">
+
+                    <label for="address">
+                        Complete Stay Address
+                    </label>
+
+                    <textarea
+                        id="address"
+                        placeholder="Enter complete address"
+                    ></textarea>
+
+                </div>
+
             </div>
 
         </div>
+
+
+        <!-- BAND COLLECTION -->
+
+        <div class="card">
+
+            <h2>🎗️ Band Collection</h2>
+
+            <div class="radio-group">
+
+                <label class="radio-option">
+
+                    <input
+                        type="radio"
+                        name="collection"
+                        value="Deliver bands to my stay"
+                    >
+
+                    <strong>🚚 Deliver bands to my stay</strong>
+
+                    <br>
+
+                    <small>
+                        Bands will be delivered to the registered
+                        accommodation in Nashik.
+                    </small>
+
+                </label>
+
+
+                <label class="radio-option">
+
+                    <input
+                        type="radio"
+                        name="collection"
+                        value="Collect from KUMBH BANDHAN centre"
+                    >
+
+                    <strong>📦 Collect from KUMBH BANDHAN centre</strong>
+
+                    <br>
+
+                    <small>
+                        Collect the registered family bands after arrival.
+                    </small>
+
+                </label>
+
+            </div>
+
+        </div>
+
+
+        <!-- SUBMIT -->
+
+        <button
+            type="button"
+            class="submit-button"
+            onclick="registerFamily()"
+        >
+            Register Family & Continue →
+        </button>
+
+    </div>
+
+
+    <!-- SUCCESS SCREEN -->
+
+    <div id="successScreen" class="card success">
+
+        <div class="success-icon">
+            🎉
+        </div>
+
+        <h2>
+            Family Registration Successful!
+        </h2>
+
+        <p>
+            Your family has been successfully registered with
+            KUMBH BANDHAN.
+        </p>
+
+        <p>
+            Your unique Family ID is:
+        </p>
+
+        <div
+            id="familyIdDisplay"
+            class="family-id"
+        >
+        </div>
+
+        <p>
+            Keep this Family ID safe. It will be used to manage
+            your family's KUMBH BANDHAN safety bands.
+        </p>
+
+        <a
+            href="bands.html"
+            class="continue-button"
+        >
+            Generate Family Bands →
+        </a>
 
     </div>
 
 </div>
 
 
+<footer>
+    KUMBH BANDHAN • Nashik Kumbh 2027
+</footer>
+
+
 <script>
 
-    /* =========================================================
-       GOOGLE SHEETS WEB APP URL
-       ========================================================= */
+    /* =====================================================
+       GOOGLE SHEETS WEB APP
+       ===================================================== */
 
     const GOOGLE_SHEET_URL =
         "https://script.google.com/macros/s/AKfycbzbV5wPrnIae-cWWrAixDc4BEvbcC0NqCtT36qG8LehwKWLXystYTepsKiIP5xELdY/exec";
 
 
-    /* =========================================================
+    function sendRegistrationToGoogleSheet(data) {
+
+        fetch(GOOGLE_SHEET_URL, {
+
+            method: "POST",
+
+            mode: "no-cors",
+
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+
+            body: JSON.stringify(data)
+
+        })
+
+        .then(function() {
+
+            console.log(
+                "Registration sent to Google Sheets."
+            );
+
+        })
+
+        .catch(function(error) {
+
+            console.error(
+                "Google Sheets error:",
+                error
+            );
+
+        });
+
+    }
+
+
+    /* =====================================================
        FAMILY MEMBERS
-       ========================================================= */
+       ===================================================== */
 
     let members = [];
 
+    let memberCounter = 0;
 
-    /* =========================================================
-       ADD MEMBER
-       ========================================================= */
 
     function addMember() {
 
-        const memberId = Date.now();
+        memberCounter++;
 
-        members.push({
+        const member = {
 
-            id: memberId,
+            id: memberCounter,
 
             name: "",
 
@@ -669,41 +674,39 @@
 
             relationship: ""
 
-        });
+        };
+
+        members.push(member);
 
         renderMembers();
+
     }
 
-
-    /* =========================================================
-       REMOVE MEMBER
-       ========================================================= */
 
     function removeMember(id) {
 
-        members =
-            members.filter(function(member) {
+        members = members.filter(function(member) {
 
-                return member.id !== id;
+            return member.id !== id;
 
-            });
+        });
 
         renderMembers();
+
     }
 
 
-    /* =========================================================
-       UPDATE MEMBER
-       ========================================================= */
+    function updateMember(
+        id,
+        field,
+        value
+    ) {
 
-    function updateMember(id, field, value) {
+        const member = members.find(function(member) {
 
-        const member =
-            members.find(function(member) {
+            return member.id === id;
 
-                return member.id === id;
-
-            });
+        });
 
         if (member) {
 
@@ -714,34 +717,30 @@
     }
 
 
-    /* =========================================================
-       ESCAPE HTML
-       ========================================================= */
-
     function escapeHTML(value) {
 
-        if (!value) {
-            return "";
-        }
-
         return String(value)
+
             .replace(/&/g, "&amp;")
+
             .replace(/</g, "&lt;")
+
             .replace(/>/g, "&gt;")
+
             .replace(/"/g, "&quot;")
+
             .replace(/'/g, "&#039;");
 
     }
 
 
-    /* =========================================================
-       DISPLAY FAMILY MEMBERS
-       ========================================================= */
-
     function renderMembers() {
 
         const container =
-            document.getElementById("membersContainer");
+            document.getElementById(
+                "membersContainer"
+            );
+
 
         container.innerHTML = "";
 
@@ -751,29 +750,49 @@
             const card =
                 document.createElement("div");
 
-            card.className = "member-card";
+            card.className =
+                "member-card";
 
 
             card.innerHTML = `
 
-                <div class="member-title">
-                    Family Member ${index + 1}
+                <div class="member-header">
+
+                    <div class="member-title">
+                        Member ${index + 1}
+                    </div>
+
+                    ${
+                        members.length > 1
+                        ?
+                        `
+                        <button
+                            type="button"
+                            class="remove-button"
+                            onclick="removeMember(${member.id})"
+                        >
+                            Remove
+                        </button>
+                        `
+                        :
+                        ""
+                    }
+
                 </div>
 
 
                 <div class="form-grid">
 
-
                     <div>
 
                         <label>
-                            Name *
+                            Full Name *
                         </label>
 
                         <input
                             type="text"
-                            placeholder="Member name"
                             value="${escapeHTML(member.name)}"
+                            placeholder="Enter member name"
                             oninput="updateMember(
                                 ${member.id},
                                 'name',
@@ -794,8 +813,8 @@
                             type="number"
                             min="0"
                             max="120"
-                            placeholder="Age"
                             value="${escapeHTML(member.age)}"
+                            placeholder="Age"
                             oninput="updateMember(
                                 ${member.id},
                                 'age',
@@ -824,132 +843,100 @@
                                 Select relationship
                             </option>
 
+                            <option
+                                value="Self"
+                                ${member.relationship === "Self" ? "selected" : ""}
+                            >
+                                Self
+                            </option>
 
                             <option
                                 value="Father"
-                                ${member.relationship === "Father"
-                                    ? "selected"
-                                    : ""}
+                                ${member.relationship === "Father" ? "selected" : ""}
                             >
                                 Father
                             </option>
 
-
                             <option
                                 value="Mother"
-                                ${member.relationship === "Mother"
-                                    ? "selected"
-                                    : ""}
+                                ${member.relationship === "Mother" ? "selected" : ""}
                             >
                                 Mother
                             </option>
 
-
                             <option
                                 value="Husband"
-                                ${member.relationship === "Husband"
-                                    ? "selected"
-                                    : ""}
+                                ${member.relationship === "Husband" ? "selected" : ""}
                             >
                                 Husband
                             </option>
 
-
                             <option
                                 value="Wife"
-                                ${member.relationship === "Wife"
-                                    ? "selected"
-                                    : ""}
+                                ${member.relationship === "Wife" ? "selected" : ""}
                             >
                                 Wife
                             </option>
 
-
                             <option
                                 value="Son"
-                                ${member.relationship === "Son"
-                                    ? "selected"
-                                    : ""}
+                                ${member.relationship === "Son" ? "selected" : ""}
                             >
                                 Son
                             </option>
 
-
                             <option
                                 value="Daughter"
-                                ${member.relationship === "Daughter"
-                                    ? "selected"
-                                    : ""}
+                                ${member.relationship === "Daughter" ? "selected" : ""}
                             >
                                 Daughter
                             </option>
 
-
                             <option
                                 value="Brother"
-                                ${member.relationship === "Brother"
-                                    ? "selected"
-                                    : ""}
+                                ${member.relationship === "Brother" ? "selected" : ""}
                             >
                                 Brother
                             </option>
 
-
                             <option
                                 value="Sister"
-                                ${member.relationship === "Sister"
-                                    ? "selected"
-                                    : ""}
+                                ${member.relationship === "Sister" ? "selected" : ""}
                             >
                                 Sister
                             </option>
 
-
                             <option
                                 value="Grandfather"
-                                ${member.relationship === "Grandfather"
-                                    ? "selected"
-                                    : ""}
+                                ${member.relationship === "Grandfather" ? "selected" : ""}
                             >
                                 Grandfather
                             </option>
 
-
                             <option
                                 value="Grandmother"
-                                ${member.relationship === "Grandmother"
-                                    ? "selected"
-                                    : ""}
+                                ${member.relationship === "Grandmother" ? "selected" : ""}
                             >
                                 Grandmother
                             </option>
 
-
                             <option
                                 value="Grandson"
-                                ${member.relationship === "Grandson"
-                                    ? "selected"
-                                    : ""}
+                                ${member.relationship === "Grandson" ? "selected" : ""}
                             >
                                 Grandson
                             </option>
 
-
                             <option
                                 value="Granddaughter"
-                                ${member.relationship === "Granddaughter"
-                                    ? "selected"
-                                    : ""}
+                                ${member.relationship === "Granddaughter" ? "selected" : ""}
                             >
                                 Granddaughter
                             </option>
 
-
                             <option
                                 value="Other"
-                                ${member.relationship === "Other"
-                                    ? "selected"
-                                    : ""}
+                                ${member.relationship === "Other" ? "selected" : ""}
                             >
                                 Other
                             </option>
@@ -959,24 +946,6 @@
                     </div>
 
                 </div>
-
-
-                ${
-                    members.length > 1
-                    ?
-                    `
-                    <button
-                        type="button"
-                        class="remove-member"
-                        onclick="removeMember(${member.id})"
-                    >
-                        Remove this member
-                    </button>
-                    `
-                    :
-                    ""
-                }
-
             `;
 
 
@@ -987,53 +956,9 @@
     }
 
 
-    /* =========================================================
-       SEND REGISTRATION TO GOOGLE SHEETS
-       ========================================================= */
-
-    function sendRegistrationToGoogleSheet(data) {
-
-        fetch(GOOGLE_SHEET_URL, {
-
-            method: "POST",
-
-            mode: "no-cors",
-
-            headers: {
-
-                "Content-Type":
-                    "text/plain;charset=utf-8"
-
-            },
-
-            body:
-                JSON.stringify(data)
-
-        })
-
-        .then(function() {
-
-            console.log(
-                "Registration sent to Google Sheets."
-            );
-
-        })
-
-        .catch(function(error) {
-
-            console.error(
-                "Google Sheets error:",
-                error
-            );
-
-        });
-
-    }
-
-
-    /* =========================================================
+    /* =====================================================
        REGISTER FAMILY
-       ========================================================= */
+       ===================================================== */
 
     function registerFamily() {
 
@@ -1078,18 +1003,28 @@
                 .trim();
 
 
-        /* =====================================================
-           VALIDATION
-           ===================================================== */
+        const collectionElement =
+            document.querySelector(
+                'input[name="collection"]:checked'
+            );
 
+
+        const collectionOption =
+            collectionElement
+                ? collectionElement.value
+                : "";
+
+
+        /* VALIDATION */
 
         if (!contactName) {
 
             alert(
-                "Please enter the family contact name."
+                "Please enter the primary family contact name."
             );
 
             return;
+
         }
 
 
@@ -1100,26 +1035,29 @@
             );
 
             return;
+
         }
 
 
         if (!stayName) {
 
             alert(
-                "Please enter your stay / hotel / camp name."
+                "Please enter your stay / accommodation name."
             );
 
             return;
+
         }
 
 
         if (!zone) {
 
             alert(
-                "Please select your assigned zone."
+                "Please select your zone."
             );
 
             return;
+
         }
 
 
@@ -1130,6 +1068,7 @@
             );
 
             return;
+
         }
 
 
@@ -1142,80 +1081,82 @@
             if (!members[i].name.trim()) {
 
                 alert(
-                    "Please enter the name of Family Member " +
+                    "Please enter the name of Member " +
                     (i + 1) +
                     "."
                 );
 
                 return;
+
             }
 
 
             if (
                 members[i].age === "" ||
-                Number(members[i].age) < 0
+                members[i].age === null
             ) {
 
                 alert(
-                    "Please enter the age of Family Member " +
+                    "Please enter the age of Member " +
                     (i + 1) +
                     "."
                 );
 
                 return;
+
             }
 
 
             if (!members[i].relationship) {
 
                 alert(
-                    "Please select the relationship of Family Member " +
+                    "Please select the relationship of Member " +
                     (i + 1) +
                     "."
                 );
 
                 return;
+
             }
 
         }
 
 
-        /* =====================================================
-           GENERATE FAMILY ID
-           ===================================================== */
+        if (!collectionOption) {
 
-        const familyId =
-            "KB-27-" +
+            alert(
+                "Please select a band collection option."
+            );
+
+            return;
+
+        }
+
+
+        /* GENERATE FAMILY ID */
+
+        const randomNumber =
             Math.floor(
                 10000 +
                 Math.random() * 90000
             );
 
 
-        /* =====================================================
-           COLLECTION OPTION
-           ===================================================== */
-
-        const collectionOption =
-            document.querySelector(
-                'input[name="collectionOption"]:checked'
-            ).value;
+        const familyId =
+            "KB-27-" +
+            randomNumber;
 
 
-        /* =====================================================
-           CLEAN MEMBER DATA
-           ===================================================== */
+        /* CLEAN MEMBER DATA */
 
         const cleanMembers =
             members.map(function(member) {
 
                 return {
 
-                    name:
-                        member.name.trim(),
+                    name: member.name.trim(),
 
-                    age:
-                        member.age,
+                    age: member.age,
 
                     relationship:
                         member.relationship
@@ -1225,85 +1166,27 @@
             });
 
 
-        /* =====================================================
-           SAVE LOCALLY
-           ===================================================== */
-
-        localStorage.setItem(
-            "familyId",
-            familyId
-        );
-
-        localStorage.setItem(
-            "contactName",
-            contactName
-        );
-
-        localStorage.setItem(
-            "mobile",
-            mobile
-        );
-
-        localStorage.setItem(
-            "email",
-            email
-        );
-
-        localStorage.setItem(
-            "stayName",
-            stayName
-        );
-
-        localStorage.setItem(
-            "zone",
-            zone
-        );
-
-        localStorage.setItem(
-            "address",
-            address
-        );
-
-        localStorage.setItem(
-            "collectionOption",
-            collectionOption
-        );
-
-        localStorage.setItem(
-            "familyMembers",
-            JSON.stringify(cleanMembers)
-        );
-
-
-        /* =====================================================
-           SEND TO GOOGLE SHEETS
-           ===================================================== */
+        /* =================================================
+           DATA FOR GOOGLE SHEETS
+           ================================================= */
 
         const registrationData = {
 
-            type:
-                "registration",
+            type: "registration",
 
-            familyId:
-                familyId,
+            familyId: familyId,
 
-            contactName:
-                contactName,
+            contactName: contactName,
 
-            mobile:
-                mobile,
+            mobile: mobile,
 
-            email:
-                email,
+            email: email,
 
-            stayName:
-                stayName,
+            stayName: stayName,
 
-            zone:
-                zone,
+            zone: zone,
 
-            address:
-                address,
+            address: address,
 
             members:
                 JSON.stringify(cleanMembers),
@@ -1314,19 +1197,72 @@
         };
 
 
+        /* SEND TO GOOGLE SHEETS */
+
         sendRegistrationToGoogleSheet(
             registrationData
         );
 
 
-        /* =====================================================
-           SHOW SUCCESS SCREEN
-           ===================================================== */
+        /* =================================================
+           SAVE DATA LOCALLY
+           ================================================= */
 
-        document.getElementById(
-            "generatedFamilyId"
-        ).textContent = familyId;
+        localStorage.setItem(
+            "familyId",
+            familyId
+        );
 
+
+        localStorage.setItem(
+            "contactName",
+            contactName
+        );
+
+
+        localStorage.setItem(
+            "mobile",
+            mobile
+        );
+
+
+        localStorage.setItem(
+            "email",
+            email
+        );
+
+
+        localStorage.setItem(
+            "stayName",
+            stayName
+        );
+
+
+        localStorage.setItem(
+            "zone",
+            zone
+        );
+
+
+        localStorage.setItem(
+            "address",
+            address
+        );
+
+
+        localStorage.setItem(
+            "collectionOption",
+            collectionOption
+        );
+
+
+        localStorage.setItem(
+            "familyMembers",
+            JSON.stringify(cleanMembers)
+        );
+
+
+        /* SHOW SUCCESS */
 
         document.getElementById(
             "registrationForm"
@@ -1337,12 +1273,23 @@
             "successScreen"
         ).style.display = "block";
 
+
+        document.getElementById(
+            "familyIdDisplay"
+        ).textContent = familyId;
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
     }
 
 
-    /* =========================================================
+    /* =====================================================
        ADD FIRST MEMBER AUTOMATICALLY
-       ========================================================= */
+       ===================================================== */
 
     addMember();
 

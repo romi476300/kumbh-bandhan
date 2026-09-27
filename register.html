@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>KUMBH BANDHAN - Registration</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Yatra+One&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #fff5e6;
+            color: #4b2a1f;
+            font-family: "Baloo 2", sans-serif;
+        }
+
+        header {
+            text-align: center;
+            padding: 25px 20px 15px;
+        }
+
+        .devanagari-title {
+            font-family: "Yatra One", cursive;
+            font-size: 42px;
+            color: #9c3f18;
+        }
+
+        .english-title {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #5b2c20;
+        }
+
+        .subtitle {
+            font-size: 17px;
+            color: #76564b;
+        }
+
+        .back {
+            display: inline-block;
+            margin-top: 10px;
+            color: #236b73;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 850px;
+            margin: 20px auto 50px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 22px;
+            box-shadow: 0 8px 25px rgba(75,42,31,0.10);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #9c3f18;
+        }
+
+        .description {
+            color: #76564b;
+        }
+
+        label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #dfc6b5;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 16px;
+            margin-bottom: 15px;
+            background: #fffaf5;
+        }
+
+        textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .member {
+            background: #fffaf5;
+            border: 1px solid #ead8ca;
+            border-radius: 15px;
+            padding: 18px;
+            margin-bottom: 15px;
+        }
+
+        .member-title {
+            color: #236b73;
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .remove {
+            float: right;
+            border: none;
+            background: transparent;
+            color: #b23b25;
+            font-family: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .add-button {
+            width: 100%;
+            padding: 12px;
+            border: 2px dashed #3c9297;
+            border-radius: 12px;
+            background: #f4ffff;
+            color: #236b73;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .radio {
+            background: #fffaf5;
+            border: 1px solid #ead8ca;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+        .radio input {
+            width: auto;
+            margin: 0 8px 0 0;
+        }
+
+        .register-button {
+            width: 100%;
+            padding: 17px;
+            border: none;
+            border-radius: 14px;
+            background: linear-gradient(135deg,#c94f16,#f28b28);
+            color: white;
+            font-family: inherit;
+            font-size: 20px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .success {
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        .success-icon {
+            font-size: 60px;
+        }
+
+        .family-id {
+            display: inline-block;
+            background: #fff0df;
+            border: 2px dashed #c94f16;
+            padding: 12px 25px;
+            border-radius: 12px;
+            color: #9c3f18;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .continue {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 25px;
+            background: linear-gradient(135deg,#236b73,#3c9297);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #76564b;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="devanagari-title">
+        कुंभ बंधन
+    </div>
+
+    <div class="english-title">
+        KUMBH BANDHAN
+    </div>
+
+    <div class="subtitle">
+        Smart Family Safety & Reunification System
+    </div>
+
+    <a href="index.html" class="back">
+        ← Back to Home
+    </a>
+
+</header>
+
+
+<main
+    class="container"
+    id="registrationPage"
+>
+
+
+    <section class="card">
+
+        <h2>
+            👨‍👩‍👧 Family Contact
+        </h2>
+
+        <p class="description">
+            Enter the main contact details for your family.
+        </p>
+
+        <label>
+            Primary Contact Name
+        </label>
+
+        <input
+            id="contactName"
+            type="text"
+            placeholder="Enter full name"
+        >
+
+
+        <label>
+            Mobile Number
+        </label>
+
+        <input
+            id="mobile"
+            type="tel"
+            maxlength="10"
+            placeholder="Enter 10-digit mobile number"
+        >
+
+
+        <label>
+            Email Address
+        </label>
+
+        <input
+            id="email"
+            type="email"
+            placeholder="Enter email address"
+        >
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>
+            👨‍👩‍👧‍👦 Family Members
+        </h2>
+
+        <p class="description">
+            Add every person who will receive a KUMBH BANDHAN safety band.
+        </p>
+
+        <div id="membersContainer"></div>
+
+        <button
+            class="add-button"
+            onclick="addMember()"
+        >
+            + Add Family Member
+        </button>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>
+            🏠 Stay Details
+        </h2>
+
+        <label>
+            Stay / Hotel / Accommodation Name
+        </label>
+
+        <input
+            id="stayName"
+            type="text"
+            placeholder="Example: Hotel ABC"
+        >
+
+
+        <label>
+            Select Your Zone
+        </label>
+
+        <select id="zone">
+
+            <option value="">
+                -- Select Zone --
+            </option>
+
+            <option>
+                Panchavati – Ramkund
+            </option>
+
+            <option>
+                Tapovan – Sadhugram
+            </option>
+
+            <option>
+                Nashik Central – Trimbak Road Gateway
+            </option>
+
+            <option>
+                West Nashik – Anandwalli / Chandshi
+            </option>
+
+            <option>
+                Trimbakeshwar Core
+            </option>
+
+            <option>
+                Trimbakeshwar Approach – Pegalwadi
+            </option>
+
+            <option>
+                Girnare – Pahine Approach
+            </option>
+
+            <option>
+                Transport & Outer Support Ring
+            </option>
+
+        </select>
+
+
+        <label>
+            Stay Address
+        </label>
+
+        <textarea
+            id="address"
+            placeholder="Enter complete address"
+        ></textarea>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>
+            📦 Band Collection
+        </h2>
+
+        <label class="radio">
+
+            <input
+                type="radio"
+                name="collection"
+                value="delivery"
+                checked
+            >
+
+            <strong>
+                Deliver bands to my stay
+            </strong>
+
+        </label>
+
+
+        <label class="radio">
+
+            <input
+                type="radio"
+                name="collection"
+                value="centre"
+            >
+
+            <strong>
+                Collect bands from KUMBH BANDHAN centre
+            </strong>
+
+        </label>
+
+    </section>
+
+
+    <section class="card">
+
+        <button
+            class="register-button"
+            onclick="registerFamily()"
+        >
+            Register Family & Continue →
+        </button>
+
+    </section>
+
+
+</main>
+
+
+<footer>
+    KUMBH BANDHAN • Nashik Kumbh 2027
+</footer>
+
+
+<script>
+
+let memberCount = 0;
+
+
+function addMember() {
+
+    memberCount++;
+
+    const container =
+        document.getElementById("membersContainer");
+
+
+    const member =
+        document.createElement("div");
+
+
+    member.className = "member";
+
+
+    member.innerHTML = `
+
+        <div class="member-title">
+
+            Family Member ${memberCount}
+
+            <button
+                class="remove"
+                onclick="this.parentElement.parentElement.remove()"
+            >
+                Remove
+            </button>
+
+        </div>
+
+
+        <label>
+            Name
+        </label>
+
+        <input
+            class="member-name"
+            type="text"
+            placeholder="Enter member name"
+        >
+
+
+        <label>
+            Age
+        </label>
+
+        <input
+            class="member-age"
+            type="number"
+            min="1"
+            max="120"
+            placeholder="Enter age"
+        >
+
+
+        <label>
+            Relationship
+        </label>
+
+        <select class="member-relation">
+
+            <option value="">
+                -- Select Relationship --
+            </option>
+
+            <option>Parent</option>
+            <option>Spouse</option>
+            <option>Child</option>
+            <option>Sibling</option>
+            <option>Grandparent</option>
+            <option>Grandchild</option>
+            <option>Relative</option>
+            <option>Other</option>
+
+        </select>
+
+    `;
+
+
+    container.appendChild(member);
+
+}
+
+
+function registerFamily() {
+
+    const contactName =
+        document.getElementById("contactName").value.trim();
+
+
+    const mobile =
+        document.getElementById("mobile").value.trim();
+
+
+    const stayName =
+        document.getElementById("stayName").value.trim();
+
+
+    const zone =
+        document.getElementById("zone").value;
+
+
+    if (!contactName) {
+
+        alert("Please enter the primary contact name.");
+
+        return;
+
+    }
+
+
+    if (!/^[0-9]{10}$/.test(mobile)) {
+
+        alert("Please enter a valid 10-digit mobile number.");
+
+        return;
+
+    }
+
+
+    if (!stayName) {
+
+        alert("Please enter your stay name.");
+
+        return;
+
+    }
+
+
+    if (!zone) {
+
+        alert("Please select your zone.");
+
+        return;
+
+    }
+
+
+    const memberElements =
+        document.querySelectorAll(".member");
+
+
+    if (memberElements.length === 0) {
+
+        alert("Please add at least one family member.");
+
+        return;
+
+    }
+
+
+    const members = [];
+
+
+    for (const element of memberElements) {
+
+        const name =
+            element.querySelector(".member-name").value.trim();
+
+        const age =
+            element.querySelector(".member-age").value.trim();
+
+        const relation =
+            element.querySelector(".member-relation").value;
+
+
+        if (!name) {
+
+            alert("Please enter all member names.");
+
+            return;
+
+        }
+
+
+        members.push({
+
+            name: name,
+
+            age: age,
+
+            relation: relation
+
+        });
+
+    }
+
+
+    // CREATE FAMILY ID
+
+    const familyId =
+        "KB-27-" +
+        Math.floor(
+            10000 + Math.random() * 90000
+        );
+
+
+    // SAVE DATA
+
+    localStorage.setItem(
+        "familyId",
+        familyId
+    );
+
+
+    localStorage.setItem(
+        "contactName",
+        contactName
+    );
+
+
+    localStorage.setItem(
+        "mobile",
+        mobile
+    );
+
+
+    localStorage.setItem(
+        "email",
+        document.getElementById("email").value.trim()
+    );
+
+
+    localStorage.setItem(
+        "stayName",
+        stayName
+    );
+
+
+    localStorage.setItem(
+        "zone",
+        zone
+    );
+
+
+    localStorage.setItem(
+        "address",
+        document.getElementById("address").value.trim()
+    );
+
+
+    localStorage.setItem(
+        "familyMembers",
+        JSON.stringify(members)
+    );
+
+
+    // SUCCESS SCREEN
+
+    document.getElementById("registrationPage").innerHTML = `
+
+        <section class="card success">
+
+            <div class="success-icon">
+                🎉
+            </div>
+
+            <h2>
+                Family Registration Successful!
+            </h2>
+
+            <p>
+                Your Family ID is:
+            </p>
+
+            <div class="family-id">
+                ${familyId}
+            </div>
+
+            <p>
+                Your family members can now receive
+                individual KUMBH BANDHAN safety bands.
+            </p>
+
+            <a
+                class="continue"
+                href="bands.html"
+            >
+                Generate Family Bands →
+            </a>
+
+        </section>
+
+    `;
+
+}
+
+
+// FIRST MEMBER
+
+addMember();
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,201 +1,206 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>KUMBH BANDHAN - Family Bands</title>
 
-    <title>KUMBH BANDHAN - Safety Bands</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Yatra+One&display=swap"
         rel="stylesheet"
     >
 
-
     <style>
-
         * {
             box-sizing: border-box;
         }
 
         body {
             margin: 0;
+            min-height: 100vh;
             background: #fff5e6;
-            color: #4b2a1f;
             font-family: "Baloo 2", sans-serif;
+            color: #4b2a1f;
         }
 
         header {
             text-align: center;
-            padding: 25px;
+            padding: 28px 20px 18px;
         }
 
         .devanagari-title {
             font-family: "Yatra One", cursive;
             font-size: 42px;
-            color: #9c3f18;
+            color: #b53e16;
+            line-height: 1;
         }
 
         .english-title {
+            margin-top: 8px;
             font-family: Georgia, serif;
-            font-size: 32px;
+            font-size: 30px;
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            color: #6d2918;
         }
 
         .subtitle {
-            color: #76564b;
+            margin-top: 5px;
+            font-size: 17px;
+            color: #80604f;
         }
 
-        .back {
+        .back-button {
             display: inline-block;
-            margin-top: 10px;
-            color: #236b73;
+            margin-top: 15px;
+            padding: 9px 18px;
+            border-radius: 20px;
+            background: white;
+            color: #8d3519;
             text-decoration: none;
             font-weight: 700;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
         }
 
-        .container {
-            width: 92%;
-            max-width: 1050px;
-            margin: auto;
+        main {
+            width: min(1050px, 92%);
+            margin: 20px auto 50px;
         }
 
         .family-card {
             background: white;
-            border-radius: 20px;
-            padding: 25px;
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: 0 8px 30px rgba(105, 54, 30, 0.12);
+            border: 1px solid rgba(181, 62, 22, 0.1);
+        }
+
+        .family-heading {
             text-align: center;
-            box-shadow: 0 8px 25px rgba(75,42,31,.10);
             margin-bottom: 25px;
+        }
+
+        .family-heading h1 {
+            margin: 0;
+            color: #b53e16;
+            font-size: 30px;
         }
 
         .family-id {
             display: inline-block;
-            padding: 10px 22px;
+            margin-top: 8px;
+            padding: 7px 16px;
             background: #fff0df;
-            border: 2px dashed #c94f16;
-            border-radius: 12px;
-            color: #9c3f18;
-            font-size: 25px;
+            border-radius: 20px;
             font-weight: 800;
-            letter-spacing: 2px;
+            color: #8d3519;
         }
 
-        .bands {
+        .bands-grid {
             display: grid;
-            grid-template-columns: repeat(
-                auto-fit,
-                minmax(280px,1fr)
-            );
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 22px;
         }
 
-        .band {
-            background: white;
+        .band-card {
             border-radius: 20px;
-            padding: 25px;
+            padding: 22px;
+            background: #fffaf4;
+            border: 1px solid #f0d8c3;
             text-align: center;
-            border-top: 6px solid #c94f16;
-            box-shadow: 0 8px 25px rgba(75,42,31,.10);
         }
 
-        .band-number {
-            color: #236b73;
-            font-weight: 800;
-        }
-
-        .member-name {
-            font-size: 27px;
-            font-weight: 800;
-            color: #5b2c20;
-        }
-
-        .member-info {
-            color: #76564b;
-            margin-bottom: 15px;
+        .band-card h2 {
+            margin: 0 0 5px;
+            color: #6d2918;
+            font-size: 23px;
         }
 
         .band-id {
-            background: #f4ffff;
-            border: 1px solid #b9dfe1;
-            padding: 10px;
-            border-radius: 10px;
-            color: #236b73;
             font-weight: 800;
-            margin-bottom: 18px;
+            color: #b53e16;
+            margin-bottom: 12px;
         }
 
-        .qr {
-            width: 210px;
-            height: 210px;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .member-info {
+            text-align: left;
             background: white;
+            padding: 12px 15px;
+            border-radius: 14px;
+            margin-bottom: 16px;
         }
 
-        .qr img {
+        .member-info div {
+            margin: 4px 0;
+        }
+
+        .qr-box {
+            background: white;
+            padding: 14px;
+            border-radius: 16px;
+            display: inline-block;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .qr-box img {
             width: 200px;
             height: 200px;
             display: block;
         }
 
-        .scan {
+        .scan-text {
             margin-top: 12px;
-            color: #76564b;
             font-size: 14px;
+            color: #80604f;
+            line-height: 1.4;
         }
 
-        .note {
-            margin-top: 8px;
-            font-size: 12px;
-            color: #9a7a6d;
-        }
-
-        .home {
-            display: block;
-            width: 260px;
-            margin: 35px auto;
-            padding: 14px;
+        .important {
+            margin-top: 25px;
+            padding: 16px 20px;
+            background: #fff0df;
+            border-radius: 16px;
             text-align: center;
-            text-decoration: none;
-            color: white;
-            background: linear-gradient(
-                135deg,
-                #236b73,
-                #3c9297
-            );
-            border-radius: 12px;
-            font-weight: 800;
+            color: #7d351d;
         }
 
         footer {
             text-align: center;
-            padding: 25px;
-            color: #76564b;
+            padding: 20px;
+            color: #8d6b5b;
+            font-size: 14px;
         }
 
+        @media (max-width: 600px) {
+            .devanagari-title {
+                font-size: 34px;
+            }
+
+            .english-title {
+                font-size: 24px;
+            }
+
+            .family-card {
+                padding: 18px;
+            }
+
+            .qr-box img {
+                width: 180px;
+                height: 180px;
+            }
+        }
     </style>
-
 </head>
-
 
 <body>
 
-
 <header>
-
-    <div class="devanagari-title">
-        कुंभ बंधन
-    </div>
+    <div class="devanagari-title">कुंभ बंधन</div>
 
     <div class="english-title">
         KUMBH BANDHAN
@@ -205,236 +210,230 @@
         Smart Family Safety & Reunification System
     </div>
 
-    <a
-        class="back"
-        href="index.html"
-    >
+    <a href="index.html" class="back-button">
         ← Back to Home
     </a>
-
 </header>
 
 
-<main class="container">
+<main>
 
+    <div class="family-card">
 
-    <section class="family-card">
+        <div class="family-heading">
+            <h1>Family Safety Bands</h1>
 
-        <h2>
-            🎟️ Family Safety Bands
-        </h2>
-
-        <p>
-            Family ID
-        </p>
-
-        <div
-            class="family-id"
-            id="familyId"
-        >
-            Loading...
+            <div class="family-id" id="familyIdDisplay">
+                Family ID
+            </div>
         </div>
 
-        <p>
-            Each family member receives a unique
-            Band ID and QR code.
-        </p>
 
-    </section>
+        <div class="bands-grid" id="bandsContainer">
+        </div>
 
 
-    <section
-        class="bands"
-        id="bandsContainer"
-    ></section>
+        <div class="important">
+            📱 <strong>Important:</strong>
+            Each band has a unique QR code.
+            If a family member gets separated, scanning the QR code can open their KUMBH BANDHAN assistance page.
+        </div>
 
-
-    <a
-        class="home"
-        href="index.html"
-    >
-        ← Return to Home
-    </a>
-
+    </div>
 
 </main>
 
 
 <footer>
-
     KUMBH BANDHAN • Nashik Kumbh 2027
-
 </footer>
 
 
 <script>
 
+    // Get registered family information
+    const familyId = localStorage.getItem("familyId");
 
-const familyId =
-    localStorage.getItem("familyId") ||
-    "KB-27-00000";
+    const familyMembersText =
+        localStorage.getItem("familyMembers");
 
-
-document.getElementById(
-    "familyId"
-).textContent = familyId;
-
-
-let members = [];
+    const familyMembers =
+        familyMembersText
+            ? JSON.parse(familyMembersText)
+            : [];
 
 
-try {
-
-    members =
-        JSON.parse(
-            localStorage.getItem("familyMembers") || "[]"
-        );
-
-} catch {
-
-    members = [];
-
-}
+    // Show Family ID
+    document.getElementById("familyIdDisplay").textContent =
+        familyId || "No Family ID found";
 
 
-// DEMO DATA
-
-if (members.length === 0) {
-
-    members = [
-
-        {
-            name: "Family Member 1",
-            age: "35",
-            relation: "Parent"
-        },
-
-        {
-            name: "Family Member 2",
-            age: "32",
-            relation: "Spouse"
-        },
-
-        {
-            name: "Family Member 3",
-            age: "8",
-            relation: "Child"
-        }
-
-    ];
-
-}
+    const container =
+        document.getElementById("bandsContainer");
 
 
-const container =
-    document.getElementById("bandsContainer");
+    // If registration information is missing
+    if (!familyId || familyMembers.length === 0) {
+
+        container.innerHTML = `
+            <div style="
+                grid-column: 1 / -1;
+                text-align:center;
+                padding:30px;
+            ">
+                <h2>No family registration found.</h2>
+
+                <p>
+                    Please register your family first.
+                </p>
+
+                <a
+                    href="register.html"
+                    style="
+                        display:inline-block;
+                        margin-top:10px;
+                        padding:12px 20px;
+                        background:#c94f16;
+                        color:white;
+                        text-decoration:none;
+                        border-radius:25px;
+                        font-weight:bold;
+                    "
+                >
+                    Register Family
+                </a>
+            </div>
+        `;
+
+    } else {
 
 
-members.forEach(function(member,index) {
+        // Create one band for every family member
+        familyMembers.forEach((member, index) => {
+
+            // Unique Band ID
+            const bandId =
+                familyId + "-" +
+                String(index + 1).padStart(2, "0");
 
 
-    const bandId =
-        familyId +
-        "-" +
-        String(index + 1).padStart(2,"0");
+            /*
+             * IMPORTANT:
+             *
+             * The QR code now contains a REAL WEB URL.
+             *
+             * Example:
+             *
+             * https://romi476300.github.io/kumbh-bandhan/member.html
+             * ?family=KB-27-12345
+             * &band=KB-27-12345-01
+             * &member=Rahul
+             *
+             * When scanned by a phone, it opens member.html.
+             */
+
+            const memberPageURL =
+                window.location.origin +
+                window.location.pathname.replace(
+                    "bands.html",
+                    "member.html"
+                ) +
+                "?family=" +
+                encodeURIComponent(familyId) +
+                "&band=" +
+                encodeURIComponent(bandId) +
+                "&member=" +
+                encodeURIComponent(member.name);
+
+
+            // QR Server generates the actual QR image
+            const qrURL =
+                "https://api.qrserver.com/v1/create-qr-code/" +
+                "?size=200x200" +
+                "&data=" +
+                encodeURIComponent(memberPageURL);
+
+
+            // Create band card
+            const card =
+                document.createElement("div");
+
+            card.className = "band-card";
+
+
+            card.innerHTML = `
+
+                <h2>
+                    ${escapeHTML(member.name)}
+                </h2>
+
+                <div class="band-id">
+                    Band ID: ${escapeHTML(bandId)}
+                </div>
+
+
+                <div class="member-info">
+
+                    <div>
+                        <strong>Age:</strong>
+                        ${escapeHTML(member.age || "Not provided")}
+                    </div>
+
+                    <div>
+                        <strong>Relationship:</strong>
+                        ${escapeHTML(member.relationship || "Family Member")}
+                    </div>
+
+                </div>
+
+
+                <div class="qr-box">
+
+                    <img
+                        src="${qrURL}"
+                        alt="QR Code for ${escapeHTML(member.name)}"
+                    >
+
+                </div>
+
+
+                <div class="scan-text">
+
+                    Scan this QR code with a phone camera
+                    to open the member's KUMBH BANDHAN
+                    safety and assistance page.
+
+                </div>
+
+            `;
+
+
+            container.appendChild(card);
+
+        });
+
+    }
 
 
     /*
-        THIS IS THE INFORMATION
-        STORED INSIDE THE QR CODE.
+     * Basic HTML escaping
+     * Prevents special characters in names
+     * from breaking the page.
+     */
 
-        At the current prototype stage,
-        it contains readable identification data.
-    */
+    function escapeHTML(value) {
 
-    const qrData =
-        "KUMBH BANDHAN\n" +
-        "Family ID: " + familyId + "\n" +
-        "Band ID: " + bandId + "\n" +
-        "Member: " + member.name;
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
 
-
-    /*
-        ONLINE QR IMAGE GENERATOR
-    */
-
-    const qrURL =
-        "https://api.qrserver.com/v1/create-qr-code/" +
-        "?size=200x200&data=" +
-        encodeURIComponent(qrData);
-
-
-    const card =
-        document.createElement("div");
-
-
-    card.className = "band";
-
-
-    card.innerHTML = `
-
-        <div class="band-number">
-            KUMBH BANDHAN • BAND ${index + 1}
-        </div>
-
-
-        <div class="member-name">
-            ${member.name}
-        </div>
-
-
-        <div class="member-info">
-
-            Age: ${member.age || "—"}
-
-            &nbsp; • &nbsp;
-
-            ${member.relation || "Family Member"}
-
-        </div>
-
-
-        <div class="band-id">
-
-            Band ID: ${bandId}
-
-        </div>
-
-
-        <div class="qr">
-
-            <img
-                src="${qrURL}"
-                alt="KUMBH BANDHAN QR Code"
-            >
-
-        </div>
-
-
-        <div class="scan">
-
-            📱 Scan this QR code
-
-        </div>
-
-
-        <div class="note">
-
-            QR contains Family ID + Band ID
-
-        </div>
-
-    `;
-
-
-    container.appendChild(card);
-
-});
-
+    }
 
 </script>
 
-
 </body>
-
 </html>
+```

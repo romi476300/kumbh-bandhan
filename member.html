@@ -72,8 +72,7 @@
             background: white;
             border-radius: 24px;
             padding: 30px;
-            box-shadow:
-                0 12px 35px rgba(100, 45, 20, 0.12);
+            box-shadow: 0 12px 35px rgba(100,45,20,0.12);
             border: 1px solid #f0d7c5;
         }
 
@@ -86,16 +85,12 @@
             width: 72px;
             height: 72px;
             margin: 0 auto 10px;
-
             border-radius: 50%;
-
             background: #e5f5ec;
             color: #27805b;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             font-size: 40px;
         }
 
@@ -106,7 +101,6 @@
 
         .verified p {
             color: #806052;
-            margin-top: 3px;
         }
 
         .member-name-box {
@@ -154,7 +148,6 @@
         .info-label {
             font-size: 13px;
             color: #8c7063;
-            margin-bottom: 2px;
         }
 
         .info-value {
@@ -214,22 +207,13 @@
             border: none;
             border-radius: 13px;
             padding: 15px;
-
-            background: linear-gradient(
-                135deg,
-                #c6371c,
-                #ed6b2f
-            );
-
+            background: linear-gradient(135deg,#c6371c,#ed6b2f);
             color: white;
             font-family: inherit;
             font-size: 19px;
             font-weight: 800;
-
             cursor: pointer;
-
-            box-shadow:
-                0 8px 18px rgba(198, 55, 28, 0.25);
+            box-shadow: 0 8px 18px rgba(198,55,28,0.25);
         }
 
         .help-button:hover {
@@ -246,21 +230,49 @@
         .help-option {
             display: block;
             text-decoration: none;
-
             background: white;
             border: 1px solid #e1c7bc;
             border-radius: 11px;
-
             padding: 12px;
-
             color: #683729;
             font-weight: 700;
-
             cursor: pointer;
+            font-family: inherit;
+            font-size: 16px;
+            width: 100%;
         }
 
         .help-option:hover {
             background: #fff8f3;
+        }
+
+        /* EMERGENCY STATUS */
+
+        .emergency-status {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 14px;
+            background: #fff7d9;
+            border: 1px solid #e7c85b;
+            text-align: left;
+        }
+
+        .emergency-status strong {
+            color: #8a5b00;
+            font-size: 17px;
+        }
+
+        .emergency-status p {
+            margin-top: 4px;
+            color: #6d5b32;
+            font-size: 14px;
+        }
+
+        .alert-id {
+            margin-top: 6px;
+            font-weight: 800;
+            color: #9d3514;
         }
 
         .footer-note {
@@ -274,7 +286,6 @@
             display: block;
             width: fit-content;
             margin: 20px auto 0;
-
             text-decoration: none;
             color: #236b73;
             font-weight: 800;
@@ -331,7 +342,6 @@
 
 <div class="container">
 
-
     <div class="card">
 
 
@@ -372,7 +382,7 @@
         </div>
 
 
-        <!-- MEMBER INFORMATION -->
+        <!-- INFORMATION -->
 
         <div class="section-title">
             👤 Member Information
@@ -445,7 +455,6 @@
 
             </div>
 
-
         </div>
 
 
@@ -479,7 +488,7 @@
         </div>
 
 
-        <!-- HELP -->
+        <!-- EMERGENCY -->
 
         <div class="help-box">
 
@@ -495,11 +504,39 @@
 
             <button
                 class="help-button"
-                onclick="showHelpOptions()"
+                id="helpButton"
+                onclick="activateEmergency()"
             >
                 🚨 GET HELP NOW
             </button>
 
+
+            <!-- EMERGENCY STATUS -->
+
+            <div
+                class="emergency-status"
+                id="emergencyStatus"
+            >
+
+                <strong>
+                    🚨 Emergency Assistance Activated
+                </strong>
+
+                <p>
+                    Assistance request has been registered
+                    for this KUMBH BANDHAN band.
+                </p>
+
+                <div
+                    class="alert-id"
+                    id="alertId"
+                >
+                </div>
+
+            </div>
+
+
+            <!-- OPTIONS -->
 
             <div
                 class="help-options"
@@ -551,9 +588,7 @@
 
 
         <div class="footer-note">
-
             KUMBH BANDHAN • Nashik Kumbh 2027
-
         </div>
 
 
@@ -574,11 +609,7 @@
 
 
     /*
-     * READ INFORMATION FROM QR URL
-     *
-     * This is important because the person scanning
-     * the QR code will NOT have the registering family's
-     * localStorage data.
+     * READ DATA FROM QR URL
      */
 
     const params =
@@ -604,11 +635,13 @@
 
 
     const relationship =
-        params.get("relationship") || "Family Member";
+        params.get("relationship")
+        || "Family Member";
 
 
     const zone =
-        params.get("zone") || "Panchavati – Ramkund";
+        params.get("zone")
+        || "Panchavati – Ramkund";
 
 
     const meetingPoint =
@@ -617,7 +650,7 @@
 
 
     /*
-     * DISPLAY INFORMATION
+     * DISPLAY DATA
      */
 
     document.getElementById(
@@ -656,46 +689,122 @@
 
 
     /*
-     * SHOW EMERGENCY OPTIONS
+     * ACTIVATE EMERGENCY
      */
 
-    function showHelpOptions() {
+    function activateEmergency() {
+
+        const status =
+            document.getElementById(
+                "emergencyStatus"
+            );
 
         const options =
             document.getElementById(
                 "helpOptions"
             );
 
-        if (
-            options.style.display === "flex"
-        ) {
+        const button =
+            document.getElementById(
+                "helpButton"
+            );
 
-            options.style.display = "none";
+        const alertId =
+            "AL-" +
+            Date.now().toString().slice(-6);
 
-        } else {
 
-            options.style.display = "flex";
+        document.getElementById(
+            "alertId"
+        ).textContent =
+            "Emergency Alert ID: " + alertId;
 
-        }
+
+        status.style.display = "block";
+
+        options.style.display = "flex";
+
+
+        button.textContent =
+            "✓ ASSISTANCE ACTIVATED";
+
+
+        button.style.background =
+            "linear-gradient(135deg,#27805b,#3c9b72)";
+
+
+        button.disabled = true;
+
+
+        /*
+         * DEMO EVENT RECORD
+         *
+         * This stores the emergency locally
+         * for prototype demonstration.
+         */
+
+        const emergencyData = {
+
+            alertId: alertId,
+
+            familyId: familyId,
+
+            bandId: bandId,
+
+            memberName: memberName,
+
+            age: age,
+
+            relationship: relationship,
+
+            zone: zone,
+
+            meetingPoint: meetingPoint,
+
+            status: "ACTIVE",
+
+            time: new Date().toLocaleString()
+
+        };
+
+
+        localStorage.setItem(
+            "lastEmergencyAlert",
+            JSON.stringify(emergencyData)
+        );
+
+
+        /*
+         * Demo confirmation
+         */
+
+        setTimeout(function() {
+
+            alert(
+                "🚨 EMERGENCY ALERT ACTIVATED\n\n" +
+                "Family ID: " + familyId + "\n" +
+                "Member: " + memberName + "\n" +
+                "Zone: " + zone + "\n\n" +
+                "Assistance workflow activated."
+            );
+
+        }, 100);
 
     }
 
 
     /*
      * MEETING POINT
-     *
-     * For the prototype, this displays the
-     * assigned meeting point.
      */
 
     function goToMeetingPoint() {
 
         alert(
-            "Meeting Point\n\n" +
+            "📍 MEETING POINT\n\n" +
             meetingPoint +
             "\n\n" +
             "Please approach the KUMBH BANDHAN " +
-            "volunteers at this meeting point."
+            "volunteers at this location."
         );
 
     }
@@ -709,19 +818,57 @@
 </html>
 ```
 
-### Now do this
+### 2. Keep the corrected `register.html`
 
-1. Save `member.html`.
-2. Upload/commit the updated `member.html` to GitHub.
-3. **Register a new test family** using your new `register.html`.
-4. Generate the new family bands.
-5. Scan the **new QR code**.
+The `register.html` code I gave you immediately before this already has the important fix:
 
-The scanned page should now show:
+```js
+members.push({
+    name: name,
+    age: age,
+    relationship: relationship
+});
+```
 
-**Age → the age you entered**
-**Relationship → the relationship you selected**
-**Assigned Zone → your selected zone**
-**Meeting Point → the zone's meeting point**
+and:
 
-One important point: **don't test with your old QR yet**. Your old QR may contain the old/blank data. Generate a fresh band after registering again.
+```js
+localStorage.setItem(
+    "familyMembers",
+    JSON.stringify(members)
+);
+```
+
+**Don't change that file again.**
+
+### 3. One important thing before testing
+
+Because you've changed both files, do a **fresh registration**.
+
+Don't use the old QR.
+
+Use this sequence:
+
+**Register Family → enter member age & relationship → Register Family & Continue → Generate Family Bands → scan NEW QR**
+
+The QR should now show something like:
+
+> **Family Member**
+> Gautami Manoj Khairnar
+>
+> Family ID: `KB-27-xxxxx`
+> Band ID: `KB-27-xxxxx-01`
+> Age: `21`
+> Relationship: `Self`
+>
+> 📍 Assigned Zone
+> Panchavati – Ramkund
+>
+> Suggested Meeting Point:
+> Ramkund Family Assistance Point
+>
+> 🚨 **GET HELP NOW**
+
+And after pressing **GET HELP NOW**, you'll get an **Emergency Alert ID** and the assistance options.
+
+**For the hackathon, this gives you a complete demonstrable front-end flow.** The next major feature I'd add after this is the **Power BI/control-room dashboard**, because that will make the project feel much more like a complete real-world system rather than just a QR website.

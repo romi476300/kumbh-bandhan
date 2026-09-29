@@ -1,348 +1,215 @@
-```html id="4p8x2n"
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>KUMBH BANDHAN - Band Verification</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Yatra+One&display=swap"
-        rel="stylesheet"
-    >
-
     <style>
-
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
 
         body {
-            font-family: "Baloo 2", sans-serif;
+            margin: 0;
+            font-family: Arial, sans-serif;
             background: #fff5e6;
-            color: #4b2a1f;
-            min-height: 100vh;
+            color: #3d2415;
         }
 
         header {
+            background: linear-gradient(135deg, #ff8c42, #e85d04);
+            color: white;
             text-align: center;
-            padding: 28px 20px 20px;
+            padding: 25px 15px;
         }
 
-        .devanagari-title {
-            font-family: "Yatra One", cursive;
-            font-size: 42px;
-            color: #9d3514;
-            line-height: 1.1;
-        }
-
-        .english-title {
-            font-family: Georgia, serif;
+        .devanagari {
             font-size: 30px;
             font-weight: bold;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: bold;
             letter-spacing: 2px;
-            color: #6d2814;
-            margin-top: 5px;
         }
 
         .subtitle {
-            font-size: 16px;
-            color: #806052;
-            margin-top: 3px;
+            margin-top: 5px;
+            font-size: 15px;
         }
 
         .container {
             max-width: 650px;
-            margin: 0 auto 40px;
-            padding: 0 20px;
+            margin: 30px auto;
+            padding: 20px;
         }
 
         .card {
             background: white;
-            border-radius: 24px;
-            padding: 30px;
-            box-shadow:
-                0 12px 35px rgba(100,45,20,0.12);
-            border: 1px solid #f0d7c5;
+            border-radius: 22px;
+            padding: 28px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            margin-bottom: 20px;
         }
 
         .verified {
             text-align: center;
-            margin-bottom: 24px;
-        }
-
-        .verified-icon {
-            width: 72px;
-            height: 72px;
-            margin: 0 auto 10px;
-            border-radius: 50%;
-            background: #e5f5ec;
-            color: #27805b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-        }
-
-        .verified h1 {
-            color: #27805b;
-            font-size: 28px;
-        }
-
-        .verified p {
-            color: #806052;
-        }
-
-        .member-name-box {
-            text-align: center;
-            background: #fff4e8;
-            border-radius: 16px;
-            padding: 18px;
-            margin-bottom: 22px;
-        }
-
-        .member-label {
-            font-size: 13px;
-            font-weight: 700;
-            color: #987667;
-            letter-spacing: 1px;
+            color: #198754;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
         }
 
         .member-name {
-            font-size: 27px;
-            font-weight: 800;
-            color: #8f3517;
-            margin-top: 3px;
-            word-break: break-word;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #d94801;
+            margin-bottom: 20px;
         }
 
-        .section-title {
-            font-size: 21px;
-            font-weight: 800;
-            color: #6d2814;
-            margin-bottom: 12px;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-        }
-
-        .info-box {
-            background: #fffaf6;
-            border: 1px solid #ead5c7;
-            border-radius: 13px;
-            padding: 13px;
-        }
-
-        .info-label {
-            font-size: 13px;
-            color: #8c7063;
-        }
-
-        .info-value {
-            font-size: 17px;
-            font-weight: 700;
-            color: #563326;
-            word-break: break-word;
-        }
-
-        .zone-box {
-            margin-top: 18px;
-            background: #f1f8f8;
-            border: 1px solid #cce2e3;
-            border-radius: 16px;
+        .info {
+            background: #fff8f0;
+            border-radius: 15px;
             padding: 18px;
         }
 
-        .zone-title {
-            font-size: 20px;
-            font-weight: 800;
-            color: #236b73;
-            margin-bottom: 4px;
+        .row {
+            padding: 10px 0;
+            border-bottom: 1px solid #eadfd4;
+            font-size: 16px;
         }
 
-        .zone-name {
-            font-size: 18px;
-            font-weight: 700;
-            color: #36585b;
+        .row:last-child {
+            border-bottom: none;
         }
 
-        .meeting {
-            margin-top: 10px;
-            color: #587073;
-        }
-
-        .help-box {
-            margin-top: 24px;
-            padding: 20px;
-            background: #fff0ed;
-            border: 1px solid #f0c7bb;
-            border-radius: 18px;
-            text-align: center;
-        }
-
-        .help-box h2 {
-            color: #b3341c;
-            font-size: 22px;
-        }
-
-        .help-box p {
-            color: #7c5c50;
-            margin: 5px 0 15px;
+        .label {
+            font-weight: bold;
         }
 
         .help-button {
             width: 100%;
+            padding: 18px;
             border: none;
-            border-radius: 13px;
-            padding: 15px;
-            background:
-                linear-gradient(
-                    135deg,
-                    #c6371c,
-                    #ed6b2f
-                );
+            border-radius: 14px;
+            background: #dc3545;
             color: white;
-            font-family: inherit;
-            font-size: 19px;
-            font-weight: 800;
+            font-size: 20px;
+            font-weight: bold;
             cursor: pointer;
-            box-shadow:
-                0 8px 18px rgba(198,55,28,0.25);
+            margin-top: 20px;
         }
 
-        .help-button:disabled {
-            cursor: default;
+        .help-button:hover {
+            background: #b02a37;
         }
 
         .help-options {
             display: none;
-            margin-top: 14px;
-            gap: 10px;
-            flex-direction: column;
-        }
-
-        .help-option {
-            display: block;
-            text-decoration: none;
-            background: white;
-            border: 1px solid #e1c7bc;
-            border-radius: 11px;
-            padding: 12px;
-            color: #683729;
-            font-weight: 700;
-            cursor: pointer;
-            font-family: inherit;
-            font-size: 16px;
-            width: 100%;
-        }
-
-        .help-option:hover {
-            background: #fff8f3;
-        }
-
-        .emergency-status {
-            display: none;
-            margin-top: 15px;
-            padding: 15px;
-            border-radius: 14px;
-            background: #fff7d9;
-            border: 1px solid #e7c85b;
-            text-align: left;
-        }
-
-        .emergency-status strong {
-            color: #8a5b00;
-            font-size: 17px;
-        }
-
-        .emergency-status p {
-            margin-top: 4px;
-            color: #6d5b32;
-            font-size: 14px;
-        }
-
-        .alert-id {
-            margin-top: 6px;
-            font-weight: 800;
-            color: #9d3514;
-        }
-
-        .footer-note {
-            text-align: center;
             margin-top: 20px;
-            color: #92796d;
+        }
+
+        .help-options button,
+        .help-options a {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 12px;
+            border: none;
+            text-decoration: none;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .call {
+            background: #198754;
+            color: white;
+        }
+
+        .coordinator {
+            background: #0d6efd;
+            color: white;
+        }
+
+        .centre {
+            background: #6f42c1;
+            color: white;
+        }
+
+        .meeting {
+            background: #fd7e14;
+            color: white;
+        }
+
+        .location {
+            background: #087f5b;
+            color: white;
+        }
+
+        .parent-location {
+            background: #f59f00;
+            color: white;
+        }
+
+        .alert-box {
+            display: none;
+            background: #ffe5e5;
+            border: 2px solid #dc3545;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .alert-title {
+            color: #dc3545;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .case-box {
+            display: none;
+            background: #e7f5ff;
+            border: 2px solid #0d6efd;
+            border-radius: 15px;
+            padding: 18px;
+            margin-top: 20px;
+        }
+
+        .case-id {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0d6efd;
+        }
+
+        .small-note {
+            font-size: 13px;
+            color: #666;
+            margin-top: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
             font-size: 13px;
         }
-
-        .home-button {
-            display: block;
-            width: fit-content;
-            margin: 20px auto 0;
-            text-decoration: none;
-            color: #236b73;
-            font-weight: 800;
-        }
-
-        @media (max-width: 600px) {
-
-            .devanagari-title {
-                font-size: 35px;
-            }
-
-            .english-title {
-                font-size: 24px;
-            }
-
-            .card {
-                padding: 22px;
-            }
-
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .member-name {
-                font-size: 23px;
-            }
-
-        }
-
     </style>
-
 </head>
-
 
 <body>
 
-
 <header>
-
-    <div class="devanagari-title">
-        कुंभ बंधन
-    </div>
-
-    <div class="english-title">
-        KUMBH BANDHAN
-    </div>
-
-    <div class="subtitle">
-        Smart Family Safety & Reunification System
-    </div>
-
+    <div class="devanagari">कुंभ बंधन</div>
+    <div class="title">KUMBH BANDHAN</div>
+    <div class="subtitle">Smart Family Safety & Reunification System</div>
 </header>
 
 
@@ -350,377 +217,248 @@
 
     <div class="card">
 
-
-        <!-- VERIFIED -->
-
         <div class="verified">
+            ✅ BAND VERIFIED
+        </div>
 
-            <div class="verified-icon">
-                ✓
+        <div class="member-name" id="memberName">
+            Family Member
+        </div>
+
+        <div class="info">
+
+            <div class="row">
+                <span class="label">Family ID:</span>
+                <span id="familyId">--</span>
             </div>
 
-            <h1>
-                Band Verified
-            </h1>
+            <div class="row">
+                <span class="label">Band ID:</span>
+                <span id="bandId">--</span>
+            </div>
 
-            <p>
-                Registered KUMBH BANDHAN Safety Band
-            </p>
+            <div class="row">
+                <span class="label">Age:</span>
+                <span id="age">--</span>
+            </div>
+
+            <div class="row">
+                <span class="label">Relationship:</span>
+                <span id="relationship">--</span>
+            </div>
+
+            <div class="row">
+                <span class="label">Assigned Zone:</span>
+                <span id="zone">--</span>
+            </div>
+
+            <div class="row">
+                <span class="label">Meeting Point:</span>
+                <span id="meeting">--</span>
+            </div>
 
         </div>
 
+        <button
+            class="help-button"
+            onclick="showHelp()"
+        >
+            🚨 GET HELP NOW
+        </button>
 
-        <!-- MEMBER -->
 
-        <div class="member-name-box">
+        <div id="helpOptions" class="help-options">
 
-            <div class="member-label">
-                FAMILY MEMBER
-            </div>
-
-            <div
-                class="member-name"
-                id="memberName"
+            <a
+                id="callParent"
+                class="call"
+                href="#"
             >
-                Family Member
-            </div>
+                📞 Call Parent
+            </a>
 
-        </div>
-
-
-        <!-- INFORMATION -->
-
-        <div class="section-title">
-            👤 Member Information
-        </div>
-
-
-        <div class="info-grid">
-
-
-            <div class="info-box">
-
-                <div class="info-label">
-                    Family ID
-                </div>
-
-                <div
-                    class="info-value"
-                    id="familyId"
-                >
-                    —
-                </div>
-
-            </div>
-
-
-            <div class="info-box">
-
-                <div class="info-label">
-                    Band ID
-                </div>
-
-                <div
-                    class="info-value"
-                    id="bandId"
-                >
-                    —
-                </div>
-
-            </div>
-
-
-            <div class="info-box">
-
-                <div class="info-label">
-                    Age
-                </div>
-
-                <div
-                    class="info-value"
-                    id="memberAge"
-                >
-                    —
-                </div>
-
-            </div>
-
-
-            <div class="info-box">
-
-                <div class="info-label">
-                    Relationship
-                </div>
-
-                <div
-                    class="info-value"
-                    id="relationship"
-                >
-                    Family Member
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- ZONE -->
-
-        <div class="zone-box">
-
-            <div class="zone-title">
-                📍 Assigned Zone
-            </div>
-
-            <div
-                class="zone-name"
-                id="zone"
+            <a
+                id="callFamily"
+                class="call"
+                href="#"
             >
-                Panchavati – Ramkund
-            </div>
+                👨‍👩‍👧 Call Family Contact
+            </a>
 
-            <div class="meeting">
+            <a
+                class="coordinator"
+                href="tel:9999999999"
+            >
+                👷 Call Zone Coordinator
+            </a>
 
-                <strong>
-                    Suggested Meeting Point:
-                </strong>
+            <a
+                class="centre"
+                href="tel:9999999999"
+            >
+                🆘 Call KUMBH BANDHAN Help Centre
+            </a>
 
-                <span id="meetingPoint">
-                    Designated Zone Meeting Point
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <!-- EMERGENCY -->
-
-        <div class="help-box">
-
-            <h2>
-                🚨 Separated or Need Help?
-            </h2>
-
-            <p>
-                Activate assistance if the person is separated
-                from their family.
-            </p>
-
+            <a
+                id="meetingLink"
+                class="meeting"
+                href="#"
+                target="_blank"
+            >
+                📍 Go to Meeting Point
+            </a>
 
             <button
-                class="help-button"
-                id="helpButton"
+                class="location"
                 onclick="activateEmergency()"
             >
-                🚨 GET HELP NOW
+                🚨 Activate Emergency Assistance
             </button>
 
+        </div>
 
-            <div
-                class="emergency-status"
-                id="emergencyStatus"
-            >
 
-                <strong>
-                    🚨 Emergency Assistance Activated
-                </strong>
+        <div id="alertBox" class="alert-box">
 
-                <p>
-                    Assistance request has been registered
-                    for this KUMBH BANDHAN band.
-                </p>
-
-                <div
-                    class="alert-id"
-                    id="alertId"
-                >
-                </div>
-
+            <div class="alert-title">
+                🚨 Emergency Assistance Activated
             </div>
 
+            <p>
+                Your emergency request has been created.
+            </p>
 
-            <!-- CALL OPTIONS -->
+            <p>
+                <strong>Alert ID:</strong>
+                <span id="alertId">--</span>
+            </p>
 
-            <div
-                class="help-options"
-                id="helpOptions"
-            >
+            <p>
+                <strong>Case ID:</strong>
+                <span id="caseIdDisplay">--</span>
+            </p>
 
-
-                <a
-                    class="help-option"
-                    id="callParent"
-                    href="#"
-                >
-                    📞 Call Parent
-                </a>
-
-
-                <a
-                    class="help-option"
-                    id="callFamily"
-                    href="#"
-                >
-                    👨‍👩‍👧 Call Family Contact
-                </a>
-
-
-                <a
-                    class="help-option"
-                    href="tel:9999999999"
-                >
-                    📍 Call Zone Coordinator
-                </a>
-
-
-                <a
-                    class="help-option"
-                    href="tel:9999999999"
-                >
-                    🆘 Call KUMBH BANDHAN Help Centre
-                </a>
-
-
-                <button
-                    class="help-option"
-                    onclick="goToMeetingPoint()"
-                >
-                    📍 Go to Meeting Point
-                </button>
-
-
-            </div>
+            <p>
+                A KUMBH BANDHAN coordinator/helper can now assist with reunification.
+            </p>
 
         </div>
 
 
-        <div class="footer-note">
-            KUMBH BANDHAN • Nashik Kumbh 2027
+        <div id="caseBox" class="case-box">
+
+            <div class="case-id">
+                📍 Live Location Assistance
+            </div>
+
+            <p>
+                The assigned helper can share their live location with the family.
+            </p>
+
+            <a
+                id="helperLink"
+                class="location"
+                href="#"
+                target="_blank"
+            >
+                👷 Open Helper Location Page
+            </a>
+
+            <a
+                id="parentLocationLink"
+                class="parent-location"
+                href="#"
+                target="_blank"
+            >
+                👨‍👩‍👧 Open Parent Live Location
+            </a>
+
+            <div class="small-note">
+                These links use the same emergency Case ID.
+            </div>
+
         </div>
-
-
-        <a
-            href="index.html"
-            class="home-button"
-        >
-            ← Back to Home
-        </a>
-
 
     </div>
 
 </div>
 
 
+<footer>
+    KUMBH BANDHAN • Nashik Kumbh 2027
+</footer>
+
+
 <script>
 
+    // -----------------------------------------
+    // READ QR INFORMATION
+    // -----------------------------------------
 
-    /*
-     * READ DATA FROM QR URL
-     */
-
-    const params =
-        new URLSearchParams(
-            window.location.search
-        );
-
+    const params = new URLSearchParams(
+        window.location.search
+    );
 
     const familyId =
-        params.get("family") || "—";
-
+        params.get("family") || "";
 
     const bandId =
-        params.get("band") || "—";
-
+        params.get("band") || "";
 
     const memberName =
-        params.get("member")
-        || "Family Member";
-
+        params.get("member") || "Family Member";
 
     const age =
-        params.get("age")
-        || "—";
-
+        params.get("age") || "";
 
     const relationship =
-        params.get("relationship")
-        || "Family Member";
-
+        params.get("relationship") || "";
 
     const zone =
-        params.get("zone")
-        || "Panchavati – Ramkund";
-
+        params.get("zone") || "";
 
     const meetingPoint =
-        params.get("meeting")
-        || "Designated Zone Meeting Point";
-
-
-    /*
-     * FAMILY CONTACT DATA
-     */
+        params.get("meeting") || "";
 
     const parentNumber =
-        params.get("parent")
-        || "";
-
+        params.get("parent") || "";
 
     const contactName =
-        params.get("contact")
-        || "Family Contact";
+        params.get("contact") || "Family Contact";
 
 
-    /*
-     * DISPLAY INFORMATION
-     */
+    // -----------------------------------------
+    // DISPLAY INFORMATION
+    // -----------------------------------------
 
-    document.getElementById(
-        "familyId"
-    ).textContent = familyId;
+    document.getElementById("memberName").textContent =
+        memberName;
 
+    document.getElementById("familyId").textContent =
+        familyId;
 
-    document.getElementById(
-        "bandId"
-    ).textContent = bandId;
+    document.getElementById("bandId").textContent =
+        bandId;
 
+    document.getElementById("age").textContent =
+        age || "--";
 
-    document.getElementById(
-        "memberName"
-    ).textContent = memberName;
+    document.getElementById("relationship").textContent =
+        relationship || "--";
 
+    document.getElementById("zone").textContent =
+        zone || "--";
 
-    document.getElementById(
-        "memberAge"
-    ).textContent = age;
-
-
-    document.getElementById(
-        "relationship"
-    ).textContent = relationship;
+    document.getElementById("meeting").textContent =
+        meetingPoint || "--";
 
 
-    document.getElementById(
-        "zone"
-    ).textContent = zone;
-
-
-    document.getElementById(
-        "meetingPoint"
-    ).textContent = meetingPoint;
-
-
-    /*
-     * CALL PARENT
-     */
+    // -----------------------------------------
+    // CALL PARENT
+    // -----------------------------------------
 
     const callParent =
-        document.getElementById(
-            "callParent"
-        );
-
+        document.getElementById("callParent");
 
     if (parentNumber) {
 
@@ -728,9 +466,7 @@
             "tel:" + parentNumber;
 
         callParent.textContent =
-            "📞 Call Parent (" +
-            parentNumber +
-            ")";
+            "📞 Call Parent (" + parentNumber + ")";
 
     } else {
 
@@ -738,19 +474,15 @@
 
         callParent.textContent =
             "📞 Parent Number Not Available";
-
     }
 
 
-    /*
-     * CALL FAMILY CONTACT
-     */
+    // -----------------------------------------
+    // CALL FAMILY CONTACT
+    // -----------------------------------------
 
     const callFamily =
-        document.getElementById(
-            "callFamily"
-        );
-
+        document.getElementById("callFamily");
 
     if (parentNumber) {
 
@@ -758,8 +490,7 @@
             "tel:" + parentNumber;
 
         callFamily.textContent =
-            "👨‍👩‍👧 Call " +
-            contactName;
+            "👨‍👩‍👧 Call " + contactName;
 
     } else {
 
@@ -767,74 +498,120 @@
 
         callFamily.textContent =
             "👨‍👩‍👧 Family Contact Not Available";
-
     }
 
 
-    /*
-     * EMERGENCY ACTIVATION
-     */
+    // -----------------------------------------
+    // MEETING POINT
+    // -----------------------------------------
+
+    const meetingLink =
+        document.getElementById("meetingLink");
+
+    if (meetingPoint) {
+
+        meetingLink.href =
+            "https://www.google.com/maps/search/?api=1&query=" +
+            encodeURIComponent(meetingPoint);
+
+    } else {
+
+        meetingLink.href = "#";
+    }
+
+
+    // -----------------------------------------
+    // SHOW HELP OPTIONS
+    // -----------------------------------------
+
+    function showHelp() {
+
+        document.getElementById("helpOptions").style.display =
+            "block";
+    }
+
+
+    // -----------------------------------------
+    // ACTIVATE EMERGENCY
+    // -----------------------------------------
 
     function activateEmergency() {
 
-        const status =
-            document.getElementById(
-                "emergencyStatus"
-            );
-
-
-        const options =
-            document.getElementById(
-                "helpOptions"
-            );
-
-
-        const button =
-            document.getElementById(
-                "helpButton"
-            );
-
-
         const alertId =
             "AL-" +
-            Date.now()
-                .toString()
-                .slice(-6);
+            Date.now().toString().slice(-8);
 
 
-        document.getElementById(
-            "alertId"
-        ).textContent =
-            "Emergency Alert ID: " +
+        // Create unique case ID
+
+        const caseId =
+            "KB-" +
+            Date.now().toString().slice(-8);
+
+
+        // Display alert
+
+        document.getElementById("alertId").textContent =
             alertId;
 
+        document.getElementById("caseIdDisplay").textContent =
+            caseId;
 
-        status.style.display =
+        document.getElementById("alertBox").style.display =
             "block";
 
 
-        options.style.display =
-            "flex";
+        // -----------------------------------------
+        // CREATE HELPER URL
+        // -----------------------------------------
+
+        const helperURL =
+            window.location.origin +
+            window.location.pathname
+                .replace("member.html", "helper.html") +
+            "?case=" +
+            encodeURIComponent(caseId) +
+            "&family=" +
+            encodeURIComponent(familyId) +
+            "&parent=" +
+            encodeURIComponent(parentNumber);
 
 
-        button.textContent =
-            "✓ ASSISTANCE ACTIVATED";
+        // -----------------------------------------
+        // CREATE PARENT URL
+        // -----------------------------------------
+
+        const parentURL =
+            window.location.origin +
+            window.location.pathname
+                .replace("member.html", "parent.html") +
+            "?case=" +
+            encodeURIComponent(caseId);
 
 
-        button.style.background =
-            "linear-gradient(135deg,#27805b,#3c9b72)";
+        // -----------------------------------------
+        // DISPLAY LINKS
+        // -----------------------------------------
+
+        document.getElementById("helperLink").href =
+            helperURL;
+
+        document.getElementById("parentLocationLink").href =
+            parentURL;
+
+        document.getElementById("caseBox").style.display =
+            "block";
 
 
-        button.disabled = true;
-
-
-        /*
-         * SAVE DEMO ALERT
-         */
+        // -----------------------------------------
+        // SAVE EMERGENCY LOCALLY
+        // -----------------------------------------
 
         const emergencyData = {
 
             alertId: alertId,
+
+            caseId: caseId,
 
             familyId: familyId,
 
@@ -850,95 +627,49 @@
 
             meetingPoint: meetingPoint,
 
+            familyContact: contactName,
+
             parentNumber: parentNumber,
 
-            contactName: contactName,
+            status: "Active",
 
-            status: "ACTIVE",
+            helperURL: helperURL,
 
-            time: new Date().toLocaleString()
+            parentURL: parentURL,
 
+            createdAt: new Date().toISOString()
         };
 
 
         localStorage.setItem(
             "lastEmergencyAlert",
-            JSON.stringify(
-                emergencyData
-            )
+            JSON.stringify(emergencyData)
         );
 
 
-        /*
-         * DEMO CONFIRMATION
-         */
+        // -----------------------------------------
+        // DEMO MESSAGE
+        // -----------------------------------------
 
-        setTimeout(
-            function() {
+        console.log(
+            "Emergency Case Created:",
+            emergencyData
+        );
 
-                alert(
+        console.log(
+            "Helper URL:",
+            helperURL
+        );
 
-                    "🚨 EMERGENCY ALERT ACTIVATED\n\n" +
-
-                    "Family ID: " +
-                    familyId +
-
-                    "\nMember: " +
-                    memberName +
-
-                    "\nZone: " +
-                    zone +
-
-                    "\n\n" +
-
-                    "Assistance workflow activated."
-
-                );
-
-            },
-            100
+        console.log(
+            "Parent URL:",
+            parentURL
         );
 
     }
-
-
-    /*
-     * MEETING POINT
-     */
-
-    function goToMeetingPoint() {
-
-        alert(
-
-            "📍 MEETING POINT\n\n" +
-
-            meetingPoint +
-
-            "\n\n" +
-
-            "Please approach the " +
-
-            "KUMBH BANDHAN volunteers " +
-
-            "at this location."
-
-        );
-
-    }
-
 
 </script>
 
-
 </body>
-
 </html>
 ```
-
-Save it, then **commit/upload `member.html` to GitHub**.
-
-### Test it
-
-Register a **new family** with a test mobile number, generate a **new QR**, scan it, press **GET HELP NOW**, and then tap **📞 Call Parent**.
-
-On a phone, the `tel:` link should open the phone's calling interface with the registered number.

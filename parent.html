@@ -1,0 +1,351 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KUMBH BANDHAN - Live Helper Location</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff5e6;
+            color: #3d2415;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff8c42, #e85d04);
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        .devanagari {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            margin-top: 6px;
+            font-size: 15px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #d94801;
+        }
+
+        .status {
+            padding: 15px;
+            border-radius: 12px;
+            background: #fff3cd;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .location-box {
+            background: #f8f8f8;
+            border-radius: 15px;
+            padding: 18px;
+            margin-top: 15px;
+        }
+
+        .location-row {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        .map-button {
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            background: #e85d04;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .map-button:hover {
+            background: #c94d00;
+        }
+
+        .case {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="devanagari">कुंभ बंधन</div>
+    <div class="title">KUMBH BANDHAN</div>
+    <div class="subtitle">Live Helper Location</div>
+</header>
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>📍 Helper Location</h2>
+
+        <div class="case">
+            Case ID: <strong id="caseId">Loading...</strong>
+        </div>
+
+        <div id="status" class="status">
+            Connecting to live location...
+        </div>
+
+        <div class="location-box">
+
+            <div class="location-row">
+                <span class="label">Latitude:</span>
+                <span id="latitude">--</span>
+            </div>
+
+            <div class="location-row">
+                <span class="label">Longitude:</span>
+                <span id="longitude">--</span>
+            </div>
+
+            <div class="location-row">
+                <span class="label">Accuracy:</span>
+                <span id="accuracy">--</span>
+            </div>
+
+            <div class="location-row">
+                <span class="label">Last Updated:</span>
+                <span id="updatedAt">--</span>
+            </div>
+
+        </div>
+
+        <a
+            id="mapButton"
+            class="map-button"
+            href="#"
+            target="_blank"
+            style="display:none;"
+        >
+            🗺️ Open Live Location in Google Maps
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+    KUMBH BANDHAN • Nashik Kumbh 2027
+</footer>
+
+
+<script type="module">
+
+    import { initializeApp }
+        from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+    import {
+        getDatabase,
+        ref,
+        onValue
+    }
+        from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+
+    // Firebase configuration
+
+    const firebaseConfig = {
+
+        apiKey: "AIzaSyDseRzDnKcLEk6ZCQS97ALiFbH1lRMWOCI",
+
+        authDomain: "kumbh-bandhan.firebaseapp.com",
+
+        databaseURL:
+            "https://kumbh-bandhan-default-rtdb.firebaseio.com",
+
+        projectId: "kumbh-bandhan",
+
+        storageBucket:
+            "kumbh-bandhan.firebasestorage.app",
+
+        messagingSenderId: "596027659104",
+
+        appId:
+            "1:596027659104:web:4723d622812ebaf9fbc405",
+
+        measurementId: "G-LPLRVDN2TB"
+    };
+
+
+    // Initialize Firebase
+
+    const app = initializeApp(firebaseConfig);
+
+    const database = getDatabase(app);
+
+
+    // Get case ID from URL
+
+    const params = new URLSearchParams(window.location.search);
+
+    const caseId =
+        params.get("case") || "KB-DEMO-001";
+
+
+    document.getElementById("caseId").textContent = caseId;
+
+
+    // Firebase location reference
+
+    const locationReference =
+        ref(database, "helperLocations/" + caseId);
+
+
+    // Listen for live location updates
+
+    onValue(locationReference, function(snapshot) {
+
+        const data = snapshot.val();
+
+
+        if (!data) {
+
+            document.getElementById("status").textContent =
+                "⏳ Waiting for helper to start sharing location...";
+
+            document.getElementById("status").style.background =
+                "#fff3cd";
+
+            return;
+        }
+
+
+        if (data.status === "active") {
+
+            document.getElementById("status").textContent =
+                "🟢 Helper location is LIVE";
+
+            document.getElementById("status").style.background =
+                "#d4edda";
+
+        } else {
+
+            document.getElementById("status").textContent =
+                "⚪ Helper has stopped sharing location";
+
+            document.getElementById("status").style.background =
+                "#eeeeee";
+        }
+
+
+        // Display coordinates
+
+        document.getElementById("latitude").textContent =
+            data.latitude ?? "--";
+
+        document.getElementById("longitude").textContent =
+            data.longitude ?? "--";
+
+
+        // Display accuracy
+
+        if (data.accuracy !== undefined) {
+
+            document.getElementById("accuracy").textContent =
+                Math.round(data.accuracy) + " metres";
+
+        } else {
+
+            document.getElementById("accuracy").textContent =
+                "--";
+        }
+
+
+        // Display update time
+
+        if (data.updatedAt) {
+
+            const date =
+                new Date(data.updatedAt);
+
+            document.getElementById("updatedAt").textContent =
+                date.toLocaleString();
+
+        }
+
+
+        // Google Maps link
+
+        if (
+            data.latitude !== undefined &&
+            data.longitude !== undefined
+        ) {
+
+            const mapURL =
+                "https://www.google.com/maps/search/?api=1&query=" +
+                data.latitude +
+                "," +
+                data.longitude;
+
+
+            const mapButton =
+                document.getElementById("mapButton");
+
+
+            mapButton.href = mapURL;
+
+            mapButton.style.display = "block";
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
+```

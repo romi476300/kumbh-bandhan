@@ -1,0 +1,895 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KUMBH BANDHAN - Helper Location</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Yatra+One&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #fff5e6;
+            color: #4b2a1f;
+            font-family: "Baloo 2", sans-serif;
+        }
+
+        header {
+            text-align: center;
+            padding: 25px 20px 15px;
+        }
+
+        .devanagari {
+            font-family: "Yatra One", cursive;
+            font-size: 40px;
+            color: #9e3f16;
+        }
+
+        .title {
+            font-family: Georgia, serif;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #71301d;
+        }
+
+        .subtitle {
+            color: #806052;
+            font-size: 16px;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 650px;
+            margin: 20px auto 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 22px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(100, 50, 20, 0.12);
+        }
+
+        h2 {
+            color: #9e3f16;
+            margin-top: 0;
+        }
+
+        .case {
+            background: #fff2dc;
+            border-left: 5px solid #d66a28;
+            padding: 14px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .case strong {
+            color: #71301d;
+        }
+
+        .status {
+            text-align: center;
+            padding: 15px;
+            border-radius: 14px;
+            background: #f4f4f4;
+            margin: 20px 0;
+            font-weight: 700;
+        }
+
+        .status.active {
+            background: #e2f7e7;
+            color: #176b2b;
+        }
+
+        .status.error {
+            background: #ffe0dc;
+            color: #9e2418;
+        }
+
+        button,
+        a.button {
+            display: block;
+            width: 100%;
+            border: none;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 14px;
+            padding: 15px;
+            margin-top: 12px;
+            font-family: inherit;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .start {
+            background: linear-gradient(135deg, #c94f16, #f28b28);
+            color: white;
+        }
+
+        .stop {
+            background: #eee;
+            color: #71301d;
+        }
+
+        .whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        .maps {
+            background: linear-gradient(135deg, #236b73, #3c9297);
+            color: white;
+        }
+
+        .info {
+            font-size: 15px;
+            color: #76594b;
+            line-height: 1.5;
+        }
+
+        .coordinates {
+            background: #faf5ef;
+            border-radius: 12px;
+            padding: 12px;
+            margin-top: 15px;
+            font-size: 14px;
+            word-break: break-all;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="devanagari">
+        कुंभ बंधन
+    </div>
+
+    <div class="title">
+        KUMBH BANDHAN
+    </div>
+
+    <div class="subtitle">
+        Helper Live Location
+    </div>
+
+</header>
+
+
+<div class="container">
+
+    <div class="card">
+
+        <h2>📍 Helper Location Sharing</h2>
+
+        <div class="case">
+
+            <strong>Emergency Case</strong>
+
+            <br>
+
+            Case ID:
+            <span id="caseIdDisplay">
+                Loading...
+            </span>
+
+        </div>
+
+
+        <p class="info">
+
+            When you start sharing, your phone's GPS location
+            will be continuously updated for the active case.
+
+            The family can open the live location link to see
+            your latest position.
+
+        </p>
+
+
+        <div
+            id="status"
+            class="status"
+        >
+            Location sharing is OFF
+        </div>
+
+
+        <button
+            id="startButton"
+            class="start"
+            onclick="startLocationSharing()"
+        >
+            📍 Start Sharing Location
+        </button>
+
+
+        <button
+            id="stopButton"
+            class="stop"
+            onclick="stopLocationSharing()"
+            style="display:none;"
+        >
+            ⛔ Stop Sharing Location
+        </button>
+
+
+        <a
+            id="mapsButton"
+            class="button maps"
+            href="#"
+            target="_blank"
+            style="display:none;"
+        >
+            🗺️ Open My Location in Google Maps
+        </a>
+
+
+        <a
+            id="whatsappButton"
+            class="button whatsapp"
+            href="#"
+            target="_blank"
+            style="display:none;"
+        >
+            📲 Send Live Location to Parent
+        </a>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Current GPS</h2>
+
+        <div
+            id="coordinates"
+            class="coordinates"
+        >
+            Waiting for GPS location...
+        </div>
+
+        <p class="info">
+
+            Keep this page open while travelling to the
+            separated family member. Location updates will
+            continue while this page is active.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+<script type="module">
+
+    import {
+        initializeApp
+    }
+    from
+    "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+
+    import {
+        getDatabase,
+        ref,
+        set,
+        remove
+    }
+    from
+    "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+
+    /* =====================================================
+       FIREBASE CONFIGURATION
+       ===================================================== */
+
+    const firebaseConfig = {
+
+        apiKey:
+            "AIzaSyDseRzDnKcLEk6ZCQS97ALiFbH1lRMWOCI",
+
+        authDomain:
+            "kumbh-bandhan.firebaseapp.com",
+
+        databaseURL:
+            "https://kumbh-bandhan-default-rtdb.firebaseio.com",
+
+        projectId:
+            "kumbh-bandhan",
+
+        storageBucket:
+            "kumbh-bandhan.firebasestorage.app",
+
+        messagingSenderId:
+            "596027659104",
+
+        appId:
+            "1:596027659104:web:4723d622812ebaf9fbc405"
+
+    };
+
+
+    const app =
+        initializeApp(firebaseConfig);
+
+
+    const database =
+        getDatabase(app);
+
+
+    /* =====================================================
+       URL PARAMETERS
+       ===================================================== */
+
+    const params =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    const caseId =
+        params.get("case") ||
+        "KB-DEMO-001";
+
+
+    const familyId =
+        params.get("family") ||
+        "";
+
+
+    const parentNumber =
+        params.get("parent") ||
+        "";
+
+
+    document.getElementById(
+        "caseIdDisplay"
+    ).textContent = caseId;
+
+
+    let watchId = null;
+
+
+    let latestLatitude = null;
+
+    let latestLongitude = null;
+
+
+    /* =====================================================
+       START LOCATION
+       ===================================================== */
+
+    window.startLocationSharing =
+        function() {
+
+            if (!navigator.geolocation) {
+
+                showError(
+                    "GPS is not supported on this device."
+                );
+
+                return;
+
+            }
+
+
+            showStatus(
+                "Requesting your location permission..."
+            );
+
+
+            watchId =
+                navigator.geolocation.watchPosition(
+
+                    function(position) {
+
+                        const latitude =
+                            position.coords.latitude;
+
+
+                        const longitude =
+                            position.coords.longitude;
+
+
+                        const accuracy =
+                            position.coords.accuracy;
+
+
+                        latestLatitude =
+                            latitude;
+
+
+                        latestLongitude =
+                            longitude;
+
+
+                        const locationData = {
+
+                            latitude:
+                                latitude,
+
+                            longitude:
+                                longitude,
+
+                            accuracy:
+                                accuracy,
+
+                            updatedAt:
+                                Date.now(),
+
+                            familyId:
+                                familyId,
+
+                            caseId:
+                                caseId,
+
+                            status:
+                                "active"
+
+                        };
+
+
+                        set(
+
+                            ref(
+                                database,
+                                "helperLocations/" +
+                                caseId
+                            ),
+
+                            locationData
+
+                        )
+
+                        .then(function() {
+
+                            showStatus(
+                                "🟢 Live location is being shared"
+                            );
+
+
+                            updateButtons();
+
+                            updateCoordinates(
+                                latitude,
+                                longitude,
+                                accuracy
+                            );
+
+                        })
+
+                        .catch(function(error) {
+
+                            showError(
+                                "Firebase error: " +
+                                error.message
+                            );
+
+                        });
+
+                    },
+
+
+                    function(error) {
+
+                        showError(
+                            getLocationError(error)
+                        );
+
+                    },
+
+
+                    {
+
+                        enableHighAccuracy:
+                            true,
+
+                        maximumAge:
+                            5000,
+
+                        timeout:
+                            15000
+
+                    }
+
+                );
+
+        };
+
+
+    /* =====================================================
+       STOP LOCATION
+       ===================================================== */
+
+    window.stopLocationSharing =
+        function() {
+
+            if (watchId !== null) {
+
+                navigator.geolocation.clearWatch(
+                    watchId
+                );
+
+                watchId = null;
+
+            }
+
+
+            remove(
+
+                ref(
+                    database,
+                    "helperLocations/" +
+                    caseId
+                )
+
+            );
+
+
+            showStatus(
+                "Location sharing stopped."
+            );
+
+
+            document.getElementById(
+                "startButton"
+            ).style.display = "block";
+
+
+            document.getElementById(
+                "stopButton"
+            ).style.display = "none";
+
+
+            document.getElementById(
+                "mapsButton"
+            ).style.display = "none";
+
+
+            document.getElementById(
+                "whatsappButton"
+            ).style.display = "none";
+
+        };
+
+
+    /* =====================================================
+       GOOGLE MAPS
+       ===================================================== */
+
+    function updateButtons() {
+
+        if (
+            latestLatitude === null ||
+            latestLongitude === null
+        ) {
+
+            return;
+
+        }
+
+
+        const mapsURL =
+            "https://www.google.com/maps/search/?api=1" +
+            "&query=" +
+            latestLatitude +
+            "," +
+            latestLongitude;
+
+
+        const mapsButton =
+            document.getElementById(
+                "mapsButton"
+            );
+
+
+        mapsButton.href =
+            mapsURL;
+
+
+        mapsButton.style.display =
+            "block";
+
+
+        const parentURL =
+            window.location.origin +
+            window.location.pathname
+                .replace(
+                    "helper.html",
+                    "parent.html"
+                ) +
+
+            "?case=" +
+            encodeURIComponent(caseId);
+
+
+        const message =
+            "🚨 KUMBH BANDHAN – Helper is on the way." +
+            "\n\n" +
+            "Family ID: " +
+            familyId +
+            "\n" +
+            "Case ID: " +
+            caseId +
+            "\n\n" +
+            "📍 View Live Helper Location:" +
+            "\n" +
+            parentURL;
+
+
+        if (parentNumber) {
+
+            const cleanNumber =
+                parentNumber
+                    .replace(/\D/g, "");
+
+
+            const whatsappURL =
+                "https://wa.me/" +
+                cleanNumber +
+                "?text=" +
+                encodeURIComponent(message);
+
+
+            const whatsappButton =
+                document.getElementById(
+                    "whatsappButton"
+                );
+
+
+            whatsappButton.href =
+                whatsappURL;
+
+
+            whatsappButton.style.display =
+                "block";
+
+        }
+
+    }
+
+
+    /* =====================================================
+       DISPLAY GPS
+       ===================================================== */
+
+    function updateCoordinates(
+        latitude,
+        longitude,
+        accuracy
+    ) {
+
+        document.getElementById(
+            "coordinates"
+        ).innerHTML =
+
+            "Latitude: " +
+            latitude.toFixed(6) +
+
+            "<br>" +
+
+            "Longitude: " +
+            longitude.toFixed(6) +
+
+            "<br>" +
+
+            "Accuracy: approximately " +
+            Math.round(accuracy) +
+            " metres" +
+
+            "<br>" +
+
+            "Updated: " +
+            new Date().toLocaleTimeString();
+
+    }
+
+
+    /* =====================================================
+       STATUS
+       ===================================================== */
+
+    function showStatus(message) {
+
+        const status =
+            document.getElementById(
+                "status"
+            );
+
+
+        status.textContent =
+            message;
+
+
+        status.className =
+            "status active";
+
+    }
+
+
+    function showError(message) {
+
+        const status =
+            document.getElementById(
+                "status"
+            );
+
+
+        status.textContent =
+            "⚠️ " + message;
+
+
+        status.className =
+            "status error";
+
+    }
+
+
+    function getLocationError(error) {
+
+        if (error.code === 1) {
+
+            return "Location permission was denied.";
+
+        }
+
+        if (error.code === 2) {
+
+            return "Your location could not be determined.";
+
+        }
+
+        if (error.code === 3) {
+
+            return "Location request timed out.";
+
+        }
+
+        return "Unable to get your location.";
+
+    }
+
+
+    function updateButtonsAfterStart() {
+
+        document.getElementById(
+            "startButton"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "stopButton"
+        ).style.display = "block";
+
+    }
+
+
+    function updateButtons() {
+
+        if (
+            latestLatitude === null ||
+            latestLongitude === null
+        ) {
+            return;
+        }
+
+
+        document.getElementById(
+            "startButton"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "stopButton"
+        ).style.display = "block";
+
+
+        const mapsURL =
+            "https://www.google.com/maps/search/?api=1" +
+            "&query=" +
+            latestLatitude +
+            "," +
+            latestLongitude;
+
+
+        const mapsButton =
+            document.getElementById(
+                "mapsButton"
+            );
+
+
+        mapsButton.href =
+            mapsURL;
+
+
+        mapsButton.style.display =
+            "block";
+
+
+        const parentURL =
+            window.location.origin +
+            window.location.pathname
+                .replace(
+                    "helper.html",
+                    "parent.html"
+                ) +
+
+            "?case=" +
+            encodeURIComponent(caseId);
+
+
+        const message =
+            "🚨 KUMBH BANDHAN – Helper is on the way." +
+            "\n\n" +
+            "Family ID: " +
+            familyId +
+            "\n" +
+            "Case ID: " +
+            caseId +
+            "\n\n" +
+            "📍 View Live Helper Location:" +
+            "\n" +
+            parentURL;
+
+
+        if (parentNumber) {
+
+            const cleanNumber =
+                parentNumber.replace(
+                    /\D/g,
+                    ""
+                );
+
+
+            const whatsappURL =
+                "https://wa.me/" +
+                cleanNumber +
+                "?text=" +
+                encodeURIComponent(message);
+
+
+            const whatsappButton =
+                document.getElementById(
+                    "whatsappButton"
+                );
+
+
+            whatsappButton.href =
+                whatsappURL;
+
+
+            whatsappButton.style.display =
+                "block";
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
+```
